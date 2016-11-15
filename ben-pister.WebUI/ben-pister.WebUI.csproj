@@ -195,9 +195,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\FooterView.cshtml" />
     <Content Include="Views\Home\NavView.cshtml" />
-    <Content Include="Views\Shared\ResumeView.cshtml" />
-    <Content Include="Views\Analytics.cshtml" />
     <Content Include="Views\Shared\TopNavigation.cshtml" />
+    <Content Include="Views\Home\Analytics.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
