@@ -1,6 +1,7 @@
 ﻿
 <head>
     <link href="~/Content/HomeLayout.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/MyInformation_Nav.js"></script>
 </head>
 @{
     ViewBag.Title = "Index";
@@ -9,15 +10,21 @@
 <div class="bck_img">
     
 </div>
-<div >
+<div>
     <div class="col-md-3 foregnd center-align">
         <h5 class="foregnd my_header">Information</h5>
-        <a href="https://www.linkedin.com/in/ben-pister-3b91883b" class="blue_link" >LinkedIn</a>
+        <a href="https://www.linkedin.com/in/ben-pister-3b91883b" target="_blank" class="blue_link" >LinkedIn</a> <br />
+        <a href="javascript:display_document('resume_window', 'resume_link')" id="resume_link" class="blue_link">View Resume</a>
+        
+        <footer class="my_footer">
+            @Html.Partial("FooterView")
+        </footer>
     </div>
     <div class="col-md-6 foregnd center-align">
         <h5 class="foregnd my_header">About Ben Pister</h5>
         <div>I am a software developer finishing my degree at Indiana University Southeast</div>
         <div>and interning at ZirMed in Louisville, KY, USA</div>
+        <div id="resume_window" style="display:none" ></div>
     </div>
     <div class="col-md-3 foregnd center-align">
         <h5 class="foregnd my_header">Contacts</h5>
@@ -28,9 +35,7 @@
         </div>
     </div>
 
-    <footer class="my_footer">
-        @Html.Partial("FooterView")
-    </footer>
+    
 </div>
 
 
