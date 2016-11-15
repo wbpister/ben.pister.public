@@ -156,6 +156,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Doc_Resources\Ben_Pister_Resume.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\Home_Background.jpg" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -202,7 +205,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Doc_Resources\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
