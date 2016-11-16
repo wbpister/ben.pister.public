@@ -157,7 +157,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <EmbeddedResource Include="Doc_Resources\Ben_Pister_Resume.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="Doc_Resources\Ben_Pister_Resume.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
