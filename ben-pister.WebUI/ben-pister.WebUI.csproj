@@ -161,6 +161,7 @@
     </Content>
     <Content Include="Doc_Resources\Ben_Pisters_Resume.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="handle404.html" />
     <Content Include="Images\Home_Background.jpg" />
     <Content Include="Scripts\Doc_View.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
