@@ -199,15 +199,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Interesting_InfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\Eatery_Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -220,6 +224,8 @@
     <Content Include="Views\Home\NavView.cshtml" />
     <Content Include="Views\Shared\TopNavigation.cshtml" />
     <Content Include="Views\Shared\_Analytics.cshtml" />
+    <Content Include="Views\Interesting_Info\Hobbies.cshtml" />
+    <Content Include="Views\Interesting_Info\Eateries.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -229,8 +235,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\ErrorHandle\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ben-pister.Domain\ben-pister.Domain.csproj">

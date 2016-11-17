@@ -13,8 +13,9 @@
 <div class="row scroll-xy">
     <div class="col-md-3 foregnd center-align">
         <h5 class="foregnd my_header">Information</h5>
-        <a href="https://www.linkedin.com/in/ben-pister-3b91883b" target="_blank" class="blue_link" >LinkedIn</a> <br />
-        <a href="javascript:display_document_view('resume_window', 'resume_link');" id="resume_link" class="blue_link">View Resume</a>
+        <div class="pad-bottom-20"><a href="https://www.linkedin.com/in/ben-pister-3b91883b" target="_blank" class="blue_link">LinkedIn</a></div> <br />
+        <div><a href="javascript:display_document_view('resume_window', 'resume_link');" id="resume_link" class="blue_link">View Resume</a></div> <br />
+        <div>@Html.ActionLink("Hobbies and Interests", "Hobbies", "Interesting_Info", null, new { @class = "blue_link" })</div>
     </div>
     <div class="col-md-6 foregnd center-align">
         <h5 class="foregnd my_header">About Ben Pister</h5>
