@@ -173,7 +173,9 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Doc_Viewing.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
@@ -198,7 +200,7 @@
     <Content Include="Views\Home\FooterView.cshtml" />
     <Content Include="Views\Home\NavView.cshtml" />
     <Content Include="Views\Shared\TopNavigation.cshtml" />
-    <Content Include="Views\Home\Analytics.cshtml" />
+    <Content Include="Views\Shared\_Analytics.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -209,6 +211,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ErrorHandle\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ben-pister.Domain\ben-pister.Domain.csproj">

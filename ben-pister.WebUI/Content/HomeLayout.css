@@ -1,5 +1,6 @@
 ﻿html, body {
-
+    position:relative;
+    min-height:100%;
     padding-top:80px;
 }
 
@@ -32,7 +33,7 @@
 
 .my_header{
     font-size:16px;
-    font-weight:700;
+    font-weight:800;
     text-decoration:underline;
 }
 
@@ -51,3 +52,5 @@
     overflow-x:hidden;
     overflow-y:visible;
 }
+
+
