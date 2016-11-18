@@ -1,6 +1,7 @@
 ﻿html, body {
     position:relative;
     min-height:100%;
+    width:100%;
     padding-top:80px;
 }
 
@@ -31,6 +32,11 @@
     color:aliceblue;
 }
 
+.black-link{
+    text-decoration:underline;
+    color:black;
+}
+
 .my_header{
     font-size:16px;
     font-weight:800;
@@ -55,10 +61,63 @@
 
 .pad-left-20{
     margin-left:50px;
-    margin-bottom:50px;
+   
 }
 
-pad-bottom-20{
+.pad-left-100{
+    margin-left:100px;
+}
+
+.pad-bottom-50{
+     margin-bottom:50px;
+}
+
+.pad-bottom-40{
+    margin-bottom:40px;
+}
+
+.pad-bottom-30{
+    margin-bottom:30px;
+}
+
+.pad-bottom-20{
     margin-bottom:20px;
 }
 
+.min-height-100{
+    min-height:100px !important;
+}
+
+.font-600{
+    font-weight:600;
+}
+.font-700{
+    font-weight:700;
+}
+
+.font-600-black{
+    font-weight:600;
+    color:#030303;
+}
+
+.hidden-sm, .hidden-md, .hidden-xs{
+    margin-bottom:0px;
+}
+
+.btn{
+    width:80%
+}
+
+.card-gray{
+    background-color:#e3e1df;
+    height:100% !important;
+    opacity:0.4;
+}
+
+div.back-div::before{
+    display:block;
+    z-index:-1;
+    height:100%;
+    background:#e3e1df;
+    opacity:0.4
+}

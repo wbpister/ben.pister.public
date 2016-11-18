@@ -176,7 +176,9 @@
     <Content Include="Doc_Resources\Ben_Pister_Resume.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Doc_Resources\Ben_Pisters_Resume.pdf" />
+    <Content Include="Doc_Resources\Ben_Pisters_Resume.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="handle404.html" />
     <Content Include="Images\Home_Background.jpg" />
@@ -202,6 +204,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FileDownloadController.cs" />
     <Compile Include="Controllers\Interesting_InfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -225,10 +228,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\FooterView.cshtml" />
     <Content Include="Views\Home\NavView.cshtml" />
-    <Content Include="Views\Shared\TopNavigation.cshtml" />
+    <Content Include="Views\Shared\_TopNavigation.cshtml" />
     <Content Include="Views\Shared\_Analytics.cshtml" />
     <Content Include="Views\Interesting_Info\Hobbies.cshtml" />
     <Content Include="Views\Interesting_Info\Eateries.cshtml" />
+    <Content Include="Views\FileDownload\PdfDownload.cshtml" />
+    <Content Include="Views\Shared\_NavBarButton.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
