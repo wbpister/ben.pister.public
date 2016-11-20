@@ -11,9 +11,9 @@
     
 </div>
 <div class="row scroll-xy card-gray">
-    <div class="col-md-3 foregnd center-align pad-bottom-50">
-        <h5 class="foregnd my_header">Information</h5>
-        <div class="pad-bottom-30"><a href="https://www.linkedin.com/in/ben-pister-3b91883b" target="_blank" class="black_link btn btn-default">LinkedIn</a><br /></div> 
+    <div class="col-md-3 center-align pad-bottom-50" style="background-color:#e3e1df;opacity:0.6;height:300px">
+        <h5 class="my_header">Information</h5>
+        <div class="pad-bottom-30"><a href="https://www.linkedin.com/in/ben-pister-3b91883b" target="_blank" class="black_link btn btn-primary">LinkedIn</a><br /></div> 
         <div class="visible-lg hidden-xs hidden-sm hidden-md pad-bottom-30" style="margin-bottom:30px">
             <a href="javascript:display_document_view('resume_window', 'resume_link');" id="resume_link" class="black_link pad-bottom-30 btn btn-default">View Resume</a>
         </div>
@@ -21,19 +21,22 @@
             @Html.ActionLink("Download Resume PDF", "PdfDownload", "FileDownload", null, new { @class = "pad-bottom-20 black_link btn btn-default" })
             <br />
         </div>
-        <div>@Html.ActionLink("Hobbies and Interests", "Hobbies", "Interesting_Info", null, new { @class = "black_link btn btn-default" })</div>
+        <div>@Html.ActionLink("Hobbies and Interests", "Hobbies", "Interesting_Info", null, new { @class = "black_link btn btn-primary" })</div>
     </div>
 
-    <div class="col-md-6 foregnd center-align pad-bottom-50">
-        <h5 class="foregnd my_header">About Ben Pister</h5>
-        <div>Ben is a software developer finishing his degree at Indiana University Southeast</div>
-        <div>and interning at ZirMed in Louisville, KY, USA</div>
-        <div class="hidden-md hidden-sm" id="resume_window" ></div>
+    <div class="col-md-6 center-align pad-bottom-50" style="background-color:#e3e1df;opacity:0.6;height:300px">
+        <h5 class="my_header">About Ben Pister</h5>
+        <div class="message-font">
+            Ben is a software developer finishing his degree at Indiana University Southeast
+            <br />
+            and interning at ZirMed in Louisville, KY, USA
+        </div>
+        
     </div>
 
-    <div class="col-md-3 foregnd center-align pad-bottom-50">
-        <h5 class="foregnd my_header">Contacts</h5>
-        <div>
+    <div class="col-md-3 foregnd center-align pad-bottom-50" style="background-color:#e3e1df;opacity:0.6;height:300px">
+        <h5 class="my_header">Contacts</h5>
+        <div class="message-font">
             ben.pister@gmail.com <br />
             and <br />
             wbpister@ius.edu
@@ -41,8 +44,18 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="text-align:center">
+        <div class="hidden-md hidden-sm" id="resume_window" style="background-color:#e3e1df;opacity:0.8"></div>
+    </div>
+    <div class="col-md-3"></div>
+    
+</div>
+
+
 <div class="navbar navbar-fixed-bottom">
-    <footer class="my_footer">
+    <footer class="my_footer" style="padding-bottom:20px">
         @Html.Partial("FooterView")
         @Html.Partial("_Analytics")
     </footer>
