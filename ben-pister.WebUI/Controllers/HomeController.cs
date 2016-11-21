@@ -11,7 +11,15 @@ namespace ben_pister.WebUI.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+
         }
     }
 }

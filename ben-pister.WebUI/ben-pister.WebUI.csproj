@@ -180,7 +180,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="handle404.html" />
     <Content Include="Images\Adirondack_Cascade.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -190,8 +189,14 @@
     <Content Include="Images\Brown_County_Light.JPG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Egypt.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Home_Background.jpg" />
     <Content Include="Images\Home_Background_Slate.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Lost_In_Egypt.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Strahl_Lake.JPG">
@@ -208,6 +213,7 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Doc_Viewing.js" />
+    <Content Include="Status-404.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -217,6 +223,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FileDownloadController.cs" />
+    <Compile Include="Controllers\InformationEntryController.cs" />
     <Compile Include="Controllers\Interesting_InfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -246,6 +253,7 @@
     <Content Include="Views\Interesting_Info\Eateries.cshtml" />
     <Content Include="Views\FileDownload\PdfDownload.cshtml" />
     <Content Include="Views\Shared\_NavBarButton.cshtml" />
+    <Content Include="Views\Shared\_FooterViewShared.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -255,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\InformationEntry\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ben-pister.Domain\ben-pister.Domain.csproj">

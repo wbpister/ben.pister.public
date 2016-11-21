@@ -13,6 +13,11 @@ namespace ben_pister.WebUI.App_Start
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/Doc_View.js"));
 
+            bundles.UseCdn = true;
+            bundles.Add(new ScriptBundle("~/bundles/jquery",
+                @"//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.js"
+                ).Include("~/Scripts/jquery-{version}.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/Site.css",
                 "~/Content/bootstrap.min.css",

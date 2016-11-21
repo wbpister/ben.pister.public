@@ -11,7 +11,7 @@
 
 <div class="row table-bordered card-gray">
     <div class="card-gray"></div>
-    <div class="col-md-6" style="border-right:2px solid white;background-color:#e3e1df;opacity:0.6;height:350px">
+    <div class="col-md-6" style="border-right:2px solid white;background-color:#e3e1df;opacity:0.6;height:440px">
         <h4 class="text-center my_header">Indoor</h4>
         <br />
         <div class="pad-left-20 message-font">Programming Languages</div>
@@ -30,11 +30,23 @@
         @*<div class="pad-left-20">Eateries</div>*@
     </div>
     
-    <div class="col-md-6" style="background-color:#e3e1df;opacity:0.6;height:350px">
+    <div class="col-md-6" style="background-color:#e3e1df;opacity:0.6;height:440px">
         <h4 class="text-center my_header">Outdoor</h4>
         <br />
-        <div class="pad-left-20 pad-bottom-50 message-font">Hiking</div>
+        <div class="pad-left-20 message-font">Hiking</div>
+            <ul>
+                <li class="pad-left-100 message-font">Adirondacks (New York)</li>
+                <li class="pad-left-100 message-font">Presidential Range (New Hampshire)</li>
+                <li class="pad-left-100 message-font">Red River Gorge (Eastern KY)</li>
+                <li class="pad-left-100 message-font">Brown County State Park (Brown County, IN)</li>
+                <li class="pad-left-100 message-font">Harrison Crawford Forest (Harrison/Crawford Counties, IN)</li>
+            </ul>
+        
         <div class="pad-left-20 message-font">Photography</div>
+            <ul>
+                <li class="pad-left-100 message-font">Outdoor photography is one of my releases and actually had much to do with 
+                how I transitioned into software development.  My photography locations are anywhere I hike.</li>
+            </ul>
     </div>
 
     @*<h5 class="text-center"><a href="javascript:restaurant_menu('Eatery_Menu', ViewData.ModelMetadata.Properties.cheddarsMenu);">Cheddars</a></h5>*@
@@ -42,10 +54,22 @@
 
 <div class="row" style="background-color:#e3e1df;opacity:0.6;height:300px">
     <div class="col-md-12 table-bordered min-height-100"><div class="pad-left-20 my_header">Development Projects</div></div>
+    <ul>
+        <li class="pad-left-100 message-font">C# Web Project - developed to allow food truck vendors to track locations and monitor success.</li>
+        <li class="pad-left-100 message-font">SQL Server Management Studio database development</li>
+        <li class="pad-left-100 message-font">C# Windows forms</li>
+        <li class="pad-left-100 message-font">Java search algorithm projects</li>
+        <li class="pad-left-100 message-font">MySQL Database development</li>
+    </ul>
 </div>
 <div class="row">
     <div class="col-md-12" id="Eatery_Menu">
 
     </div>
 </div>
+
+<div>
+    @Html.Partial("_Analytics")
+</div>
+
 
