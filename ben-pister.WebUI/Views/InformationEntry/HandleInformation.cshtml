@@ -3,7 +3,7 @@
     ViewBag.Title = "HandleInformation";
 }
 <head>
-    @Styles.Render("~/Content/information_css")
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
     <script type="text/javascript" src="~/Scripts/Doc_View.js"></script>
 </head>
@@ -11,39 +11,48 @@
 <h4 class="text-center">Arithmetic Tester</h4>
 
 <div class="row">
-    <div class="col-md-4">
-        <div class="arithmetic_btn"><a href="javascript:generateTwoNums('a', 'num1', 'num2');" class="btn btn-primary">Addition</a></div>
-        <div class="arithmetic_btn"><a href="javascript:generateTwoNums('s', 'num1', 'num2');" class="btn btn-primary">Subtraction</a></div>
-        <div class="arithmetic_btn"><a href="javascript:generateTwoNums('m', 'num1', 'num2');" class="btn btn-primary">Multiplication</a></div>
-        <div class="arithmetic_btn"><a href="#javascript:generateTwoNums('d', 'num1', 'num2');" class="btn btn-primary">Division</a></div>
+    <div class="col-md-4 text-left">
+        <div class="col-md-8 arithmetic_btn">
+            <button id="btnAddition" class="btn btn-primary">Addition</button>
+        </div>
+        <div class="col-md-8 arithmetic_btn">
+            <button id="btnSubtraction" class="btn btn-primary">Subtraction</button>
+        </div>
+        <div class="col-md-8 arithmetic_btn">
+            <button id="btnMultiplication" class="btn btn-primary">Multiplication</button>
+        </div>
+        <div class="col-md-8 arithmetic_btn">
+            <button id="btnDivision" class="btn btn-primary">Division</button>
+        </div>
+
+        <div class="col-md-8 arithmetic_btn">
+            <button id="btnSubmitAnswer" class="btn btn-primary">Submit Answer</button>
+        </div>
     </div>
-    <div class="col-md-8 text-left">
-        <div>
+    <div class="col-md-4 text-left">
+        <div class="col-md-8">
             <label class="label-space">Number 1</label>
             @Html.TextBox("num1", null, new { @class = "form-control", @readonly = "readonly" })
         </div>
 
-        <div>
+        <div class="col-md-8">
             <label class="label-space">Number 2</label>
             @Html.TextBox("num2", null, new { @class = "form-control", @readonly = "readonly" })
         </div>
 
-        <div>
+        <div class="col-md-8">
             <label class="label-space">Your answer</label>
             @Html.TextBox("answer", null, new { @class = "form-control" })
         </div>
 
-        <br />
+        <br /><br /><br />
 
-        <div class="col-md-5">
-            <a href="javascript:arithmetic_handle();" class="btn btn-primary" >Submit Answer</a>
-        </div>
-        <br />
-        <div>
+        
+        <div class="clearfix"></div>
+        <div class="col-md-8">
             <span id="result-message"></span>
         </div>
 
-        @*Pick up here*@
         <div style="display:none">
             @Html.TextBox("txt-mode", null, new { @class="hidden-control"})
         </div>

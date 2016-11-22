@@ -15,7 +15,8 @@
         <h5 class="my_header">Information</h5>
         <div class="pad-bottom-30"><a href="https://www.linkedin.com/in/ben-pister-3b91883b" target="_blank" class="black_link btn btn-primary">LinkedIn</a><br /></div> 
         <div class="visible-lg hidden-xs hidden-sm hidden-md pad-bottom-30" style="margin-bottom:30px">
-            <a href="javascript:display_document_view('resume_window', 'resume_link');" id="resume_link" class="black_link btn btn-default">View Resume</a>
+            @*Change this to a button*@
+            <button id="resume_link" class="black_link btn btn-default">View Resume</button>
         </div>
         <div class="hidden-lg">
             @Html.ActionLink("Download Resume PDF", "PdfDownload", "FileDownload", null, new { @class = "pad-bottom-20 black_link btn btn-default" })
@@ -46,19 +47,17 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6" style="text-align:center">
-        <div class="hidden-md hidden-sm" id="resume_window" style="background-color:#e3e1df;opacity:0.8"></div>
+        <div id="resume_window" class="hidden-md hidden-sm resume-initial">
+            @*<embed id="embed-resume" class="resume-initial" src="/Doc_Resources/Ben_Pisters_Resume.pdf" type="application/pdf" width="600" height="800" />*@
+            @*<object id="embed-resume" type="application/pdf" data="/Doc_Resources/Ben_Pisters_Resume.pdf" width="600" height="800" ></object>*@
+        </div>
     </div>
     <div class="col-md-3"></div>
     
 </div>
 
 
-<div class="navbar navbar-fixed-bottom">
-    <footer class="my_footer">
-        @Html.Partial("_FooterViewShared")
-        @Html.Partial("_Analytics")
-    </footer>
-</div>
+
 
 
 
