@@ -4,6 +4,8 @@
 }
 <head>
     @Styles.Render("~/Content/information_css")
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript" src="~/Scripts/Doc_View.js"></script>
 </head>
 
 <h4 class="text-center">Arithmetic Tester</h4>
@@ -28,19 +30,30 @@
 
         <div>
             <label class="label-space">Your answer</label>
-            @Html.TextBox("Answer", null, new { @class = "form-control" })
+            @Html.TextBox("answer", null, new { @class = "form-control" })
         </div>
 
         <br />
 
         <div class="col-md-5">
-            <a href="javascript:arithmetic_handle();" class="btn btn-primary" >Enter Answer</a>
+            <a href="javascript:arithmetic_handle();" class="btn btn-primary" >Submit Answer</a>
         </div>
+        <br />
+        <div>
+            <span id="result-message"></span>
+        </div>
+
         @*Pick up here*@
         <div style="display:none">
             @Html.TextBox("txt-mode", null, new { @class="hidden-control"})
         </div>
+
+        <div style="display:none">
+            @Html.TextBox("correct-answer", "", new { @class = "hidden-control" })
+        </div>
     </div>
+
+    
 </div>
 
 

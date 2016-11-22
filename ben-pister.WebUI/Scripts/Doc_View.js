@@ -1,4 +1,6 @@
-﻿var shown = true;
+﻿
+
+var shown = true;
 function display_document_view(docId, linkId) {
 
     if (!shown) {
@@ -15,48 +17,69 @@ function display_document_view(docId, linkId) {
     }
 }
 
-var arithmetic_calc = (function () {
+var arithmetic_calc = {
 
     //Add
-    var addition = function (num1, num2) {
-        return (num1 + numb2);
-    };
-    var subtraction = function (num1, num2) {
-        return (num1 - num2);
-    };
-    var multiplication = function () {
-        return (num1 * num2);
-    };
-    var division = function (num1, num2) {
-        return (num1 / num2);
-    };
-}());
+    "addition": function (num1, num2) {
+        return (parseInt(num1) + parseInt(num2));
+    },
+    "subtraction": function (num1, num2) {
+        return (parseInt(num1) - parseInt(num2));
+    },
+    "multiplication": function () {
+        return (parseInt(num1) * parseInt(num2));
+    },
+    "division": function (num1, num2) {
+        return (parseInt(num1) / parseInt(num2));
+    }
+};
 
 function arithmetic_handle() {
-    var mode = jQuery('#txt-mode').html();
-    var num1 = jQuery('#num1').html();
-    var num2 = jQuery('#num2').html();
+    var mode = document.getElementById("txt-mode").value;
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var result = 0;
 
     switch (mode) {
-        case "a": arithmetic_calc.addition(num1, num2);
+        case "a": result = arithmetic_calc.addition(num1, num2);
             break;
-        case "s": arithmetic_calc.subtraction(num1, num2);
+        case "s": result = arithmetic_calc.subtraction(num1, num2);
             break;
-        case "m": arithmetic_calc.multiplication(num1, num2);
+        case "m": result = arithmetic_calc.multiplication(num1, num2);
             break;
-        case "d": arithmetic_calc.division(num1, num2);
+        case "d": result = arithmetic_calc.division(num1, num2);
             break;
         default:
             break;
     }
+
+    jQuery('#correct-answer').val(result);
+
+    check_answer();
 }
 //Pick up here
 function generateTwoNums(mode, num1, num2) {
-    jQuery('#txt-mode').html(mode);
+    document.getElementById("txt-mode").value = mode;
+    document.getElementById("answer").value = '';
 
     var number1 = Math.floor((Math.random() * 100) + 1);
-    jQuery('#' + num1).html(number1);
+    document.getElementById(num1).value = number1;
+    //jQuery('#' + num1).val(number1);
 
     var number2 = Math.floor((Math.random() * 100) + 1);
-    jQuery('#' + num2).html(number2);
+    document.getElementById(num2).value = number2;
+    //jQuery('#' + num2).val(number2);
+}
+
+function check_answer() {
+    var correct = document.getElementById("correct-answer").value;
+    var submitted = parseInt(document.getElementById("answer").value);
+
+    if (correct == submitted){
+        jQuery('#result-message').html('Congratulations, you are correct!  :)');
+    }
+
+    else {
+        jQuery('#result-message').html('Sorry, that is incorrect.  :(');
+    }
 }
