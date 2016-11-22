@@ -167,6 +167,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\HomeLayout.css" />
+    <Content Include="Content\InformationPage.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -212,7 +213,6 @@
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Doc_Viewing.js" />
     <Content Include="Status-404.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -254,6 +254,7 @@
     <Content Include="Views\FileDownload\PdfDownload.cshtml" />
     <Content Include="Views\Shared\_NavBarButton.cshtml" />
     <Content Include="Views\Shared\_FooterViewShared.cshtml" />
+    <Content Include="Views\InformationEntry\HandleInformation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,7 +264,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\InformationEntry\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ben-pister.Domain\ben-pister.Domain.csproj">

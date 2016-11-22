@@ -24,6 +24,13 @@ namespace ben_pister.WebUI.App_Start
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-theme.css",
                 "~/Content/HomeLayout.css"));
+
+            bundles.Add(new StyleBundle("~/Content/information_css").Include(
+                "~/Content/Site.css",
+                "~/Content/bootstrap.min.css",
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-theme.css",
+                "~/Content/InformationPage.css"));
         }
     }
 }
