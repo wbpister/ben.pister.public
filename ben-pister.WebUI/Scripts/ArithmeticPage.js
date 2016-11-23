@@ -3,10 +3,10 @@
     $('#answer').val('');
     $('#result-message').html('');
 
-    var number1 = Math.floor((Math.random() * 100) + 1);
+    var number1 = Math.floor((Math.random() * 1001) + 1);
     $('#txtNum1').val(number1);
 
-    var number2 = Math.floor((Math.random() * 100) + 1);
+    var number2 = Math.floor((Math.random() * 1001) + 1);
     $('#txtNum2').val(number2);
 
     if (mode == 'a') { 
@@ -42,33 +42,36 @@ var mode_feedback = {
 
 var counter = 0;
 function print(mode, number1, number2, num1, num2) {
-    var length1 = number1.toString().length % 2;
-    var length2 = number2.toString().length % 2
+    var length1 = number1.toString().length;
+    var length2 = number2.toString().length;
     var strLength1 = 0;
-
-    if (length1 == 0) { strLength1 = length1 + 6; }
-    else if (length1 == 1) { strLength1 = length1 + 5; }
-    else if (length1 == 2) { strLength1 = length1 + 2; }
-
-    if (length2 == 0) { strLength2 = length2 + 6; }
-    else if (length2 == 1) { strLength2 = length2 + 5; }
-    else if (length2 == 2) { strLength2 = length2 + 2; }
-
-    var strLength2 = (number2.toString().length % 2) + 2;
     var printStr = '';
 
-    for (counter; counter < strLength1; counter++) {
-        printStr = printStr + '&nbsp;';
-    }
-    $('#' + num1).html(number1);
+    //if (length1 == 0) { strLength1 = length1 + 6; }
+    if (length1 == 1) { $('#' + num1).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number1); }
+    else if (length1 == 2) { $('#' + num1).html('&nbsp;&nbsp;' + number1); }
+    else if (length1 == 3) { $('#' + num1).html(number1); }
+    //printStr);
 
-    counter = 0; printStr = '';
-    printStr = printStr + sign.getSign(mode);
+    printStr = '';
+    //if (length2 == 0) { strLength2 = length2 + 6; }
+    if (length2 == 1) { $('#' + num2).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number2); }
+    else if (length2 == 2) { $('#' + num2).html('&nbsp;&nbsp;' + number2); }
+    else if (length2 == 3) { $('#' + num2).html(number2); }
 
-    for (counter; counter < strLength2; counter++) {
-        printStr = printStr + '&nbsp;';
-    }
-    $('#' + num2).html(number2);
+    //var strLength2 = (number2.toString().length % 2) + 2;
+
+    //for (counter; counter < strLength1; counter++) {
+    //    printStr = printStr + '&nbsp;';
+    //}
+    
+    counter = 0; 
+    //printStr = printStr + sign.getSign(mode);
+
+    //for (counter; counter < strLength2; counter++) {
+    //    printStr = printStr + '&nbsp;';
+    //}
+    //$('#' + num2).html(printStr);
 
     $('#arithmeticSign').html(sign.getSign(mode));
 }
@@ -77,7 +80,7 @@ var sign = {
 
     "getSign": function(mode){
         if (mode == 'a') { return '+'; }
-        else if (mode == 's') { return '- '; }
+        else if (mode == 's') { return '-'; }
         else if (mode == 'm') { return 'x'; }
         else if (mode == 'd') { return '/'; }
     }
