@@ -1,0 +1,24 @@
+﻿@using ben_pister.Domain.Entities
+@model List<KentuckianaEats>
+
+@{
+    ViewBag.Title = "KIEats";
+    
+}
+
+
+    <h2>Kentucky/Indiana Food Types/Locations</h2>
+
+    <table class="table-responsive table-bordered">
+        @{foreach (var eatery in Model)
+            {
+                <tr>
+                    <td>@eatery.Name</td>
+                    <td>@eatery.Location</td>
+                    <td>@eatery.Phone</td>
+                    <td>@eatery.MenuWebSite</td>  @*<a href="https://www.qdoba.com/menu-nutrition">Menu</a>*@
+                </tr>
+            }
+        }
+    </table>
+

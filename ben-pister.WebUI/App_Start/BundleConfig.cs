@@ -25,7 +25,8 @@ namespace ben_pister.WebUI.App_Start
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-theme.css",
                 "~/Content/HomeLayout.css",
-                "~/Content/InformationPage.css"));
+                "~/Content/InformationPage.css",
+                "~/Content/EatsPage.css"));
         }
     }
 }
