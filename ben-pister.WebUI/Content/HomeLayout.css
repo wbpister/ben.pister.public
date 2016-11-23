@@ -33,6 +33,7 @@
 .foregnd{
     color:black;
     font-weight: 700;
+    opacity:0.6;
 }
 
 .center-align{
@@ -59,7 +60,8 @@
 .my_footer{
     height:80px;
     width:100%;
-    border-top:2px solid white;
+    /*border-top:2px solid white;*/
+    background-color:darkgray;
     text-align:center;
     opacity: 0.8;
 }
@@ -126,7 +128,7 @@
 }
 
 .btn{
-    width:80%
+    width:100%
 }
 .center-btn-text{
     padding:8px 30px 8px 10px !important;

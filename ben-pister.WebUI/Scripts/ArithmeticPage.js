@@ -4,37 +4,115 @@
     $('#result-message').html('');
 
     var number1 = Math.floor((Math.random() * 100) + 1);
-    $('#' + num1).val(number1);
+    $('#txtNum1').val(number1);
 
     var number2 = Math.floor((Math.random() * 100) + 1);
-    $('#' + num2).val(number2);
+    $('#txtNum2').val(number2);
+
+    if (mode == 'a') { 
+        mode_feedback.addition();
+    }
+    else if (mode == 's') { 
+        mode_feedback.subtraction(); 
+    }
+    else if (mode == 'm') { 
+        mode_feedback.multiplication(); 
+    }
+    else if (mode == 'd') { 
+        mode_feedback.division; 
+    }
+    print(mode, number1, number2, num1, num2);
 }
 
-var talley = parseInt(0);
+var mode_feedback = {
+
+    "addition": function () {
+        $('#selectedModeFeedback').html('Addition Selected');
+    },
+    "subtraction": function () {
+        $('#selectedModeFeedback').html('Subtraction Selected');
+    },
+    "multiplication": function () {
+        $('#selectedModeFeedback').html('Multiplication Selected');
+    },
+    "division": function () {
+        $('#selectedModeFeedback').html('Division Selected');
+    }
+}
+
+var counter = 0;
+function print(mode, number1, number2, num1, num2) {
+    var length1 = number1.toString().length % 2;
+    var length2 = number2.toString().length % 2
+    var strLength1 = 0;
+
+    if (length1 == 0) { strLength1 = length1 + 6; }
+    else if (length1 == 1) { strLength1 = length1 + 5; }
+    else if (length1 == 2) { strLength1 = length1 + 2; }
+
+    if (length2 == 0) { strLength2 = length2 + 6; }
+    else if (length2 == 1) { strLength2 = length2 + 5; }
+    else if (length2 == 2) { strLength2 = length2 + 2; }
+
+    var strLength2 = (number2.toString().length % 2) + 2;
+    var printStr = '';
+
+    for (counter; counter < strLength1; counter++) {
+        printStr = printStr + '&nbsp;';
+    }
+    $('#' + num1).html(number1);
+
+    counter = 0; printStr = '';
+    printStr = printStr + sign.getSign(mode);
+
+    for (counter; counter < strLength2; counter++) {
+        printStr = printStr + '&nbsp;';
+    }
+    $('#' + num2).html(number2);
+
+    $('#arithmeticSign').html(sign.getSign(mode));
+}
+
+var sign = {
+
+    "getSign": function(mode){
+        if (mode == 'a') { return '+'; }
+        else if (mode == 's') { return '- '; }
+        else if (mode == 'm') { return 'x'; }
+        else if (mode == 'd') { return '/'; }
+    }
+}
+
+function add_lead(num_length, position) {
+    var lead = '';
+    var counter = (position == 'top') ? (num_length % 2) + 1 : (num_length % 2);
+    var i = 0;
+    for (i; i < counter; i++) {
+        lead += ' ';
+    }
+    return lead;
+}
+
 var arithmetic_calc = {
     
     "addition": function (num1, num2) {
-        talley = (parseInt(num1) + parseInt(num2));
-        return talley;
+        return (parseInt(num1) + parseInt(num2));
     },
     "subtraction": function (num1, num2) {
-        talley = (parseInt(numb1) - parseInt(numb2));
-        return talley;
+        return (parseInt(num1) - parseInt(num2));
     },
     "multiplication": function (num1, num2) {
-        talley = parseInt(num1) * parseInt(num2);
-        return talley;
+        return parseInt(num1) * parseInt(num2);
     },
     "division": function (num1, num2) {
-        talley = Math.round(parseInt(num1) / parseInt(num2) * 1000) / 1000;
-        return talley;
+        return Math.round(parseInt(num1) / parseInt(num2) * 1000) / 1000;
     }
 };
 
 function arithmetic_handle() {
     var mode = $('#txt-mode').val();
-    var num1 = $('#num1').val();
-    var num2 = $('#num2').val();
+    var num1 = $('#txtNum1').val();
+    var num2 = $('#txtNum2').val();
     var result = parseInt(0);
 
     switch (mode) {

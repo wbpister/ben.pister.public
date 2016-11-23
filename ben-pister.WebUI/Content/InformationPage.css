@@ -3,10 +3,47 @@
 }
 
 .arithmetic_btn{
-    margin:15px 0px 15px 0px;
-    width:50%;
+    margin-bottom:20px;
 }
 
 .label-space{
     margin-top:20px;
+    text-align:left;
+}
+
+.btn-add{
+    background-color:green;
+    color:white;
+    font-weight:700;
+}
+
+.btn-sub{
+    background-color:green;
+    color:white;
+    font-weight:700;
+}
+
+.btn-mul{
+    background-color: darkred;
+    color:white;
+    font-weight:700;
+}
+
+.btn-div{
+    background-color:darkred;
+    color:white;
+    font-weight:700;
+}
+
+#selectedModeFeedback{
+    margin-left: 25px;
+}
+
+#num1, #num2{
+    text-align:right !important;
+}
+
+.sign-align{
+    vertical-align:text-bottom;
+    text-align:right;
 }
