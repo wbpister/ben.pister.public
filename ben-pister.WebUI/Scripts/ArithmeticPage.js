@@ -80,7 +80,7 @@ var sign = {
 
     "getSign": function(mode){
         if (mode == 'a') { return '+'; }
-        else if (mode == 's') { return '-'; }
+        else if (mode == 's') { return '--'; }
         else if (mode == 'm') { return 'x'; }
         else if (mode == 'd') { return '/'; }
     }
