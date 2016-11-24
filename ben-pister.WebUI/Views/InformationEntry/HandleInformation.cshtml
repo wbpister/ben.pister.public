@@ -9,83 +9,81 @@
 </head>
 
 
+<body style="background-color:lightgrey">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
+            <h4 class="text-left">Arithmetic Tester <br />(For Division, round to three decimal places.)</h4>
+            <div class="row">
+                <div class="col-md-8 arithmetic_btn">
+                    <button id="btnAddition" class="btn btn-add">Addition</button>
+                </div>
+                <br />
+                <div class="col-md-8 arithmetic_btn">
+                    <button id="btnSubtraction" class="btn btn-sub">Subtraction</button>
+                </div>
+                <br />
+                <div class="col-md-8 arithmetic_btn">
+                    <button id="btnMultiplication" class="btn btn-mul">Multiplication</button>
+                </div>
+                <br />
+                <div class="col-md-8 arithmetic_btn">
+                    <button id="btnDivision" class="btn btn-div">Division</button>
+                </div>
+                <br />
+                <div class="col-md-8">
+                    <button id="btnSubmitAnswer" class="btn btn-primary">Submit Answer</button>
+                </div>
+                <br />
+                <div id="selectedModeFeedback" style="display:none"></div>
+            </div>
+        </div>
+        <div class="col-md-4 text-left">
+            <div class="col-md-12">
+                <div class="col-md-2 col-sm-2 col-xs-3 sign-align">
+                    <br />
+                    <span id="arithmeticSign" class="arithmeticWeight"></span>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-4 arithmeticWeight">
+                    <span id="num1" class="right-align"></span>
+                    <br />
+                    <span id="num2" class="right-alignt"></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
 
-<div class="row">
-    <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-        <h4 class="text-left">Arithmetic Tester <br />(For Division, round to three decimal places.)</h4>
-        <div class="row">
-            <div class="col-md-8 arithmetic_btn">
-                <button id="btnAddition" class="btn btn-add">Addition</button>
-            </div>
-            <br />
-            <div class="col-md-8 arithmetic_btn">
-                <button id="btnSubtraction" class="btn btn-sub">Subtraction</button>
-            </div>
-            <br />
-            <div class="col-md-8 arithmetic_btn">
-                <button id="btnMultiplication" class="btn btn-mul">Multiplication</button>
-            </div>
-            <br />
-            <div class="col-md-8 arithmetic_btn">
-                <button id="btnDivision" class="btn btn-div">Division</button>
-            </div>
             <br />
             <div class="col-md-8">
-                <button id="btnSubmitAnswer" class="btn btn-primary">Submit Answer</button>
+                <label class="label-space">Your answer</label>
+                @Html.TextBox("answer", null, new { @class = "form-control" })
             </div>
-            <br />
-            <div id="selectedModeFeedback" style="display:none"></div>
+
+            <br /><br />
+            <div class="col-md-8">
+                <span id="result-message"></span>
+            </div>
+
+            <div class="clearfix"></div>
+            <br /><br /><br /><br /><br />
+
+            <div class="col-md-8" style="display:none">
+                <label class="label-space">Number 1</label>
+                @Html.TextBox("txtNum1", null, new { @class = "hidden-control", @readonly = "readonly" })
+            </div>
+
+            <div class="col-md-8" style="display:none">
+                <label class="label-space">Number 2</label>
+                @Html.TextBox("txtNum2", null, new { @class = "hidden-control", @readonly = "readonly" })
+            </div>
+
+            <div style="display:none">
+                @Html.TextBox("txt-mode", null, new { @class = "hidden-control" })
+            </div>
+
+            <div style="display:none">
+                @Html.TextBox("correct-answer", "", new { @class = "hidden-control" })
+            </div>
         </div>
     </div>
-    <div class="col-md-4 text-left">
-        <div class="col-md-12">
-            <div class="col-md-2 col-sm-2 col-xs-3 sign-align">
-                <br />
-                <span id="arithmeticSign"></span>
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-4">
-                <span id="num1" class="right-align"></span>
-                <br />
-                <span id="num2" class="right-align"></span>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-
-        <br />
-        <div class="col-md-8">
-            <label class="label-space">Your answer</label>
-            @Html.TextBox("answer", null, new { @class = "form-control" })
-        </div>
-
-        <br /><br />
-        <div class="col-md-8">
-            <span id="result-message"></span>
-        </div>
-
-        <div class="clearfix"></div>
-        <br /><br /><br /><br /><br />
-
-        <div class="col-md-8" style="display:none">
-            <label class="label-space">Number 1</label>
-            @Html.TextBox("txtNum1", null, new { @class = "hidden-control", @readonly = "readonly" })
-        </div>
-
-        <div class="col-md-8" style="display:none">
-            <label class="label-space">Number 2</label>
-            @Html.TextBox("txtNum2", null, new { @class = "hidden-control", @readonly = "readonly" })
-        </div>
-
-        <div style="display:none">
-            @Html.TextBox("txt-mode", null, new { @class="hidden-control"})
-        </div>
-
-        <div style="display:none">
-            @Html.TextBox("correct-answer", "", new { @class = "hidden-control" })
-        </div>
-    </div>
-
-    
-</div>
-
+</body>
 
 

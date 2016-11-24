@@ -26,6 +26,10 @@
     left:0px;
 }
 
+.arithmetic-bckgnd{
+    background-color:lightgray;
+}
+
 .row{
     margin: 0px !important;
 }
