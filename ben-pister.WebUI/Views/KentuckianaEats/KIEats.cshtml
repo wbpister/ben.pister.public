@@ -5,22 +5,36 @@
     ViewBag.Title = "KIEats";
     
 }
-<body style="background-color:darksalmon">
 
-    <h2>Kentucky/Indiana Food Types/Locations</h2>
+<head>
+    @Styles.Render("~/Content/css")
+</head>
+<body class="text-center eatery-background" >
 
-    <table class="table-responsive table-bordered">
-        @{foreach (var eatery in Model)
+    <div class="row">
+        <div class="col-md-24">
+            <h4 class="pad-bottom-50">
+                I live in Southern Indiana and have worked in Louisville, KY for several years.<br />
+                I enjoy the variety of foods available in Louisville and Southern Indiana and decided<br /> 
+                that I would add this page as an additional opportunity to design and evolve a layout.
+            </h4>
+        </div>
+    </div>
+    <div class="row text-center">
+        <table class="table-responsive table-bordered table-centered" >
+            @{foreach (var eatery in Model)
             {
-                <tr>
-                    <td>@eatery.Name</td>
-                    <td>@eatery.Location</td>
-                    <td>@eatery.Phone</td>
-                    <td>@eatery.MenuWebSite</td>  @*<a href="https://www.qdoba.com/menu-nutrition">Menu</a>*@
-                </tr>
+                    <tr>
+                        <td>@eatery.Name</td>
+                        <td>@eatery.Location</td>
+                        <td>@eatery.Phone</td>
+                        <td>@eatery.MenuWebSite</td>
+                    </tr>
+                }
             }
-        }
-    </table>
+        </table>
+    </div>
+    
 </body>
 
     
