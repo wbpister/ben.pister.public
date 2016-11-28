@@ -47,32 +47,15 @@ function print(mode, number1, number2, num1, num2) {
     var strLength1 = 0;
     var printStr = '';
 
-    //if (length1 == 0) { strLength1 = length1 + 6; }
     if (length1 == 1) { $('#' + num1).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number1); }
     else if (length1 == 2) { $('#' + num1).html('&nbsp;&nbsp;' + number1); }
     else if (length1 == 3) { $('#' + num1).html(number1); }
-    //printStr);
 
     printStr = '';
-    //if (length2 == 0) { strLength2 = length2 + 6; }
     if (length2 == 1) { $('#' + num2).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number2); }
     else if (length2 == 2) { $('#' + num2).html('&nbsp;&nbsp;' + number2); }
     else if (length2 == 3) { $('#' + num2).html(number2); }
-
-    //var strLength2 = (number2.toString().length % 2) + 2;
-
-    //for (counter; counter < strLength1; counter++) {
-    //    printStr = printStr + '&nbsp;';
-    //}
     
-    counter = 0; 
-    //printStr = printStr + sign.getSign(mode);
-
-    //for (counter; counter < strLength2; counter++) {
-    //    printStr = printStr + '&nbsp;';
-    //}
-    //$('#' + num2).html(printStr);
-
     $('#arithmeticSign').html(sign.getSign(mode));
 }
 
