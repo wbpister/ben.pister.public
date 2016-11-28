@@ -10,7 +10,7 @@ function display_document_view(docId, linkId) {
         shown = true;
     }
     else if (shown) {
-        ga('send', 'view', 'Resume', 'view-only');
+        ga('send', {'hitType': 'event', 'eventCategory': 'button', 'eventAction':'click'});
         $('#' + linkId).html('Close Resume');
         $('#embed-resume').show(250);
         shown = false;
