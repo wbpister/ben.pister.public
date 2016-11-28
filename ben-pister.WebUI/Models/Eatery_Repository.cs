@@ -36,14 +36,15 @@ namespace ben_pister.WebUI.Models
 
                 ke = new KentuckianaEats();
 
-                if (array.Length == 4)
+                if (array.Length == 5)
                 {
                     ke.Name = array[0];
                     ke.Location = array[1];
                     ke.Phone = array[2];
+                    ke.ExpenseLevel = array[3];
 
                     TagBuilder tag = new TagBuilder("a");
-                    tag.MergeAttribute("href", array[3].Trim());
+                    tag.MergeAttribute("href", array[4].Trim());
                     tag.MergeAttribute("target", "blank");
                     tag.InnerHtml = "Menu";                    
                     ke.MenuWebSite = MvcHtmlString.Create(tag.ToString());
@@ -52,7 +53,9 @@ namespace ben_pister.WebUI.Models
                 }
             }
 
-            return Restaurants;
+            List<KentuckianaEats> sortedRest = Restaurants.OrderBy(o => o.Name).ToList<KentuckianaEats>();
+
+            return sortedRest;
         }
     }
 }

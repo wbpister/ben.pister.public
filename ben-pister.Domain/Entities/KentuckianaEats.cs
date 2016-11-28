@@ -7,6 +7,7 @@ namespace ben_pister.Domain.Entities
         public string Name { get; set; }
         public string Location { get; set; }
         public string Phone { get; set; }
+        public string ExpenseLevel { get; set; }
         public MvcHtmlString MenuWebSite { get; set; }
         
     }

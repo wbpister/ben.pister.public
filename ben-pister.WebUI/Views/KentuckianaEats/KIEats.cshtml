@@ -22,16 +22,29 @@
     </div>
     <div class="row text-center">
         <table class="table-responsive table-bordered table-centered" style="margin:0 auto !important;float:none !important">
-            @{foreach (var eatery in Model)
-            {
+            <thead>
+                <tr>
+                    <th>Restaurant Name</th>
+                    <th>Location</th>
+                    <th>Phone</th>
+                    <th>Expense</th>
+                    <th>Menu Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{foreach (var eatery in Model)
+                {
                     <tr>
                         <td>@eatery.Name</td>
                         <td>@eatery.Location</td>
                         <td>@eatery.Phone</td>
+                        <td>@eatery.ExpenseLevel</td>
                         <td>@eatery.MenuWebSite</td>
                     </tr>
+                    }
                 }
-            }
+
+            </tbody>
         </table>
     </div>
     <br /><br /><br /><br />
