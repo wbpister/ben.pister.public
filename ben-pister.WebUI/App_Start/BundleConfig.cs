@@ -14,7 +14,7 @@ namespace ben_pister.WebUI.App_Start
                 "~/Scripts/modernizr-2.6.2.js",
                 "~/Scripts/jquery-1.10.2.min.js",
                 "~/Scripts/bootstrap.min.js",
-                "~/Scripts/GameButtons.js",
+                "~/Scripts/InitializeButtons.js",
                 "~/Scripts/Doc_View.js",
                 "~/Scripts/ArithmeticPage.js",
                 "~/Scripts/jquery-{version}.js"));
