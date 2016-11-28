@@ -10,6 +10,7 @@ function display_document_view(docId, linkId) {
         shown = true;
     }
     else if (shown) {
+        ga("create", "UA-Mycreate", "auto");
         ga('send', 'event');
         $('#' + linkId).html('Close Resume');
         $('#embed-resume').show(250);
