@@ -8,7 +8,7 @@ namespace ben_pister.WebUI.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.UseCdn = true;
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/modernizr-2.6.2.js",
