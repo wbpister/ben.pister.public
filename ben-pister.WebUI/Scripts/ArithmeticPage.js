@@ -3,10 +3,10 @@
     $('#answer').val('');
     $('#result-message').html('');
 
-    var number1 = Math.floor((Math.random() * 1001) + 1);
+    var number1 = Math.floor((Math.random() * 101) + 1);
     $('#txtNum1').val(number1);
 
-    var number2 = Math.floor((Math.random() * 1001) + 1);
+    var number2 = Math.floor((Math.random() * 101) + 1);
     $('#txtNum2').val(number2);
 
     if (mode == 'a') { 
