@@ -12,5 +12,7 @@
 
     $('#resume_link').click(function () { display_document_view('resume_window', 'resume_link'); });
 
-    $('#btnSubmitAnswer').click(function () { arithmetic_handle(); })
+    $('#btnSubmitAnswer').click(function () { arithmetic_handle(); });
+
+    $('#my-tester-button').click(function () { showMeNow(); });
 });

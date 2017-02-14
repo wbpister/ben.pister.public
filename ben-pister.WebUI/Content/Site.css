@@ -16,3 +16,29 @@ textarea {
     max-width: 280px;
 }
 
+.show-me{
+    animation: showIt 3s;
+}
+
+.show-me-out{
+    animation: showItOut 3s;
+}
+
+@keyframes showIt{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes showItOut{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+

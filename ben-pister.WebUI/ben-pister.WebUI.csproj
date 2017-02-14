@@ -208,6 +208,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\ArithmeticPage.js" />
+    <Content Include="Scripts\CssAnimationTest.js" />
     <Content Include="Scripts\Doc_View.js" />
     <Content Include="Scripts\InitializeButtons.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
