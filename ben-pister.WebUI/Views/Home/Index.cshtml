@@ -18,11 +18,14 @@
             @*Change this to a button*@
             <button id="resume_link" class="black_link btn btn-default">View Resume</button>
         </div>
+
         <div class="hidden-lg">
             @Html.ActionLink("Download Resume PDF", "PdfDownload", "FileDownload", null, new { @class = "pad-bottom-20 black_link btn btn-default" })
         </div>
         <div>@Html.ActionLink("Hobbies and Interests", "Hobbies", "Interesting_Info", null, new { @class = "black_link btn btn-primary" })</div>
     </div>
+
+    
 
     <div class="col-md-6 center-align pad-bottom-50 card-background">
         <h5 class="my_header">About Ben Pister</h5>
