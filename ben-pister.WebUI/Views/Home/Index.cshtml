@@ -10,12 +10,12 @@
 <div class="bck_img">
     
 </div>
-<div class="row">
-    <div class="col-md-3 center-align pad-bottom-50 card-background">
+
+    @*<div class="col-md-3 center-align pad-bottom-50 card-background">
         <h5 class="my_header">Information</h5>
         <div class="pad-bottom-30"><a href="https://www.linkedin.com/in/ben-pister-3b91883b" target="_blank" class="black_link btn btn-primary">LinkedIn</a><br /></div> 
         <div class="visible-lg hidden-xs hidden-sm hidden-md pad-bottom-30" style="margin-bottom:30px">
-            @*Change this to a button*@
+
             <button id="resume_link" class="black_link btn btn-default">View Resume</button>
         </div>
 
@@ -23,11 +23,11 @@
             @Html.ActionLink("Download Resume PDF", "PdfDownload", "FileDownload", null, new { @class = "pad-bottom-20 black_link btn btn-default" })
         </div>
         <div>@Html.ActionLink("Hobbies and Interests", "Hobbies", "Interesting_Info", null, new { @class = "black_link btn btn-primary" })</div>
-    </div>
+    </div>*@
 
     
 
-    <div class="col-md-6 center-align pad-bottom-50 card-background">
+    <div class="col-md-4 center-align pad-bottom-50 card-background">
         <h5 class="my_header">About Ben Pister</h5>
         <div class="message-font">
             I am a software developer finishing my degree at Indiana University Southeast
@@ -37,17 +37,23 @@
         
     </div>
 
-    <div class="col-md-3 foregnd center-align pad-bottom-50 card-background">
+    <div class="col-md-5" style="text-align:center">
+        <div id="resume_window" class="hidden-md hidden-sm resume-initial text-center">
+            <object id="embed-resume" class="text-center" type="application/pdf" data="/Doc_Resources/Ben_Pisters_Resume.pdf" width="800" height="800" style="display:none"></object>
+        </div>
+    </div>
+
+    @*<div class="col-md-3 foregnd center-align pad-bottom-50 card-background">
         <h5 class="my_header">Contacts</h5>
         <div class="message-font">
             ben.pister@gmail.com <br />
             and <br />
             wbpister@ius.edu
         </div>
-    </div>
-</div>
+    </div>*@
 
-<div class="row">
+
+@*<div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-5" style="text-align:center">
         <div id="resume_window" class="hidden-md hidden-sm resume-initial text-center">
@@ -58,7 +64,7 @@
     
     
     
-</div>
+</div>*@
 <br /><br /><br /><br />
 
 

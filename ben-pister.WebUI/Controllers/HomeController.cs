@@ -15,7 +15,7 @@ namespace ben_pister.WebUI.Controllers
             {
                 return View();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new Exception();
             }

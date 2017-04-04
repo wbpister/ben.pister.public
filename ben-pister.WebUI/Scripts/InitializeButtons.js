@@ -10,9 +10,18 @@
 
     $('#btnDivision').click(function () { generateTwoNums('d', number1, number2) });
 
-    $('#resume_link').click(function () { display_document_view('resume_window', 'resume_link'); });
+    $('#resume_link').click(function () {
+        display_document_view('resume_window', 'resume_link');
+    });
 
     $('#btnSubmitAnswer').click(function () { arithmetic_handle(); });
 
     $('#my-tester-button').click(function () { showMeNow(); });
+
+    $('#linked-in-btn').click(function () { navigateToLinkedIn(); });
+
+    $('#hobbies-btn').click(function () {
+        location.href = '/Interesting_Info/Hobbies';
+        $('#resume_link').hide();
+    });
 });

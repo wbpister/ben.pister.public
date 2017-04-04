@@ -1,5 +1,5 @@
 ﻿html, body {
-    padding-top:50px;
+    /*padding-top:50px;*/
 }
 
 .bck_img{
@@ -76,8 +76,11 @@
 }
 
 .pad-left-20{
+    margin-left:20px;
+}
+
+.pad-left-50{
     margin-left:50px;
-   
 }
 
 .pad-left-100{
@@ -98,6 +101,10 @@
 
 .pad-bottom-20{
     margin-bottom:20px;
+}
+
+.pad-top-10{
+    margin-top:10px;
 }
 
 .min-height-100{
@@ -150,4 +157,8 @@
 .resume-initial{
     background-color:#e3e1df;
     opacity:0.8;
+}
+
+.hide-element{
+    
 }

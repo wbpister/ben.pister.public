@@ -16,3 +16,7 @@ function display_document_view(docId, linkId) {
         shown = false;
     }
 }
+
+function navigateToLinkedIn() {
+    window.open("https://www.linkedin.com/in/ben-pister-3b91883b", "_blank");
+}
