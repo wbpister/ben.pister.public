@@ -11,7 +11,7 @@
     $('#btnDivision').click(function () { generateTwoNums('d', number1, number2) });
 
     $('#resume_link').click(function () {
-        display_document_view('resume_window', 'resume_link');
+        window.location.replace("/Resume/Index");
     });
 
     $('#btnSubmitAnswer').click(function () { arithmetic_handle(); });
@@ -22,6 +22,5 @@
 
     $('#hobbies-btn').click(function () {
         location.href = '/Interesting_Info/Hobbies';
-        $('#resume_link').hide();
     });
 });
