@@ -13,7 +13,7 @@ namespace ben_pister.WebUI.Controllers
         public ActionResult PdfDownload()
         {
             
-            return File("~/Doc_Resources/Ben_Pisters_Resume.pdf", "application/pdf", "Ben Pisters Resume.pdf");
+            return File("~/Doc_Resources/Ben Pister's Resume.pdf", "application/pdf", "Ben Pisters Resume.pdf");
         }
     }
 }
