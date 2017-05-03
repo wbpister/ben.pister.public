@@ -19,6 +19,21 @@
     left:0px;
 }
 
+.bck_img_small{
+
+    background-image:url(/Images/SwingingB.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    opacity:1.0;
+    position:fixed;
+    
+    width:100%;
+    height:100%;
+    border: 1px solid black;
+    top:30px;
+    left:-20px;
+}
+
 .bck_img_photo_hobby{
     background-image:url(/Images/Strahl_Lake.jpg);
     background-repeat:no-repeat;
