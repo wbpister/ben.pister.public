@@ -6,7 +6,7 @@
 
 .bck_img{
 
-    background-image:url(/Images/SwingingBridgePhoto.jpg);
+    background-image:url(/Images/SwingingBridge.jpg);
     background-repeat:no-repeat;
     background-size:cover;
     opacity:1.0;
@@ -15,8 +15,8 @@
     width:100%;
     height:100%;
     border: 1px solid black;
-    top:25px;
-    left:0px;
+    top:50px;
+    left:20px;
 }
 
 .bck_img_photo_hobby{

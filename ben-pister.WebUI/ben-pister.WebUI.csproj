@@ -213,6 +213,7 @@
     <Content Include="Images\Strahl_Lake.JPG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\SwingingBridge.jpg" />
     <Content Include="Images\SwingingBridgePhoto.jpg" />
     <Content Include="Scripts\ArithmeticPage.js" />
     <Content Include="Scripts\CssAnimationTest.js" />
