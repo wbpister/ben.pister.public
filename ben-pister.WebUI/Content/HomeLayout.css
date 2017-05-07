@@ -74,6 +74,11 @@
     color:black;
 }
 
+.white-link{
+    text-decoration:underline;
+    color:white;
+}
+
 .download_link{
     text-decoration:underline;
     color:#293038;
@@ -83,11 +88,15 @@
 .small-resume-button{
     background-color:#293038;
     border:none;
-    width:100%;
+    width:97%;
 }
 
 #linked-in-btn{
-    width:98%;
+    width:95%;
+}
+
+#arithmeticGame{
+    width:95%;
 }
 
 .my_header{
@@ -116,7 +125,7 @@
 }
 
 .pad-left-15{
-    margin-left:7px;
+    margin-left:15px;
 }
 
 .pad-left-20{

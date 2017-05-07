@@ -30,18 +30,24 @@
         <div id="hamburger-collapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left center-align">
                 <li class="btn-group-vertical"><a href="/Home/Index">Home</a></li>
-                <li class="pad-left-5 pad-top-10"><button id="linked-in-btn" class="black-link btn btn-default">LinkedIn</button></li>
+                <li class="pad-left-15 pad-top-10">
+                    <button id="linked-in-btn" class="black-link btn btn-default">LinkedIn</button>
+                </li>
                 
                 <li class="visible-lg hidden-xs hidden-sm hidden-md pad-left-20 pad-top-10">
                     <button id="resume_link" class="black-link btn btn-default">View Resume</button>
                 </li>
-                <li class="hidden-lg pad-left-5 pad-top-10">
+
+                <li class="hidden-lg pad-left-15 pad-top-10">
                     <button class="small-resume-button">
                         @Html.ActionLink("Download Resume", "PdfDownload", "FileDownload", null, new { @class = "download_link btn btn-default" })
                     </button>
                 </li>
                 @*<button id="resume_link" class="black-link btn btn-default">Download Resume</button>*@
                 @*<li class="pad-left-20 pad-top-10"><button id="hobbies-btn" class="black-link btn btn-default">Hobbies</button></li>*@
+                <li class="pad-left-15 pad-top-10">
+                    <button id="arithmeticGame" class="white-link btn btn-danger">Arithmetic Game</button>
+                </li>
             </ul>
         </div>
     </div>

@@ -1,12 +1,14 @@
 ﻿function generateTwoNums(mode, num1, num2) {
+
+    $('#txtBoundary').val(101);
     $('#txt-mode').val(mode);
     $('#answer').val('');
     $('#result-message').html('');
 
-    var number1 = Math.floor((Math.random() * 101) + 1);
+    var number1 = Math.floor((Math.random() * $('#txtBoundary').val()) + 1);
     $('#txtNum1').val(number1);
 
-    var number2 = Math.floor((Math.random() * 101) + 1);
+    var number2 = Math.floor((Math.random() * $('#txtBoundary').val()) + 1);
     $('#txtNum2').val(number2);
 
     if (mode == 'a') { 
@@ -134,7 +136,7 @@ function check_answer() {
     }
 
     else if (submitted == '') {
-        $('#result-message').html('Please enter an answer to be checked.');
+        $('#result-message').html('Please select an operation and enter an answer to be checked.');
     }
 
     else if (correct == submitted) {

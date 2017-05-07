@@ -1,6 +1,8 @@
 ﻿$(function () {
     var number1 = 'num1';
     var number2 = 'num2';
+    var boundary = 101;
+    var allottedTime = 30;
 
     $('#btnAddition').click(function () { generateTwoNums('a', number1, number2) });
 
@@ -22,5 +24,9 @@
 
     $('#hobbies-btn').click(function () {
         location.href = '/Interesting_Info/Hobbies';
+    });
+
+    $('#arithmeticGame').click(function () {
+        location.href = '/InformationEntry/HandleInformation';
     });
 });

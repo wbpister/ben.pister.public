@@ -9,16 +9,34 @@
 </head>
 
 <div class="row">
-    <div class="col-md-24">
+    <div class="col-md-12 ">
+        <span class="text-info">I am developing an arithmetic game for this page.</span>
+    </div>
+    <div class="col-md-12">
         <h4 class="pad-bottom-50">
-            Arithmetic Tester - I love math and, while calculators are great, I enjoy finding techniques <br />
-            to help solve problems more quickly, whether in my head or on paper, for mental exercise.<br />
-            This was inspired by a junior high math teacher and my high school Calculus teacher.
+            I enjoy working math problems in my head for exercise, an idea inspired by two math instructors:<br />
+            a junior high math instructor and my high school calculus instructor.
         </h4>
     </div>
 </div>
 
 <body style="background-color:lightgrey">
+    <div class="row" style="display:none">
+        <div class="col-md-6">
+            <div class="col-md-2 pad-top-10">
+                <button class="btn btn-default">L1</button>
+            </div>
+            <div class="col-md-2 pad-top-10">
+                <button class="btn btn-success">L2</button>
+            </div>
+            <div class="col-md-2 pad-top-10">
+                <button class="btn btn-danger">L3</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
             <h4 class="text-left">For Division, round to three decimal places.</h4>
@@ -39,11 +57,11 @@
                     <button id="btnDivision" class="btn btn-div">Division</button>
                 </div>
                 <br />
-                <div class="col-md-8">
-                    <button id="btnSubmitAnswer" class="btn btn-primary">Submit Answer</button>
-                </div>
+                
                 <br />
-                <div id="selectedModeFeedback" style="display:none"></div>
+                <div id="selectedModeFeedback" style="display:none">
+
+                </div>
             </div>
         </div>
         <div class="col-md-4 text-left">
@@ -70,6 +88,10 @@
             <div class="col-md-8">
                 <span id="result-message"></span>
             </div>
+            <br />
+            <div class="col-md-8 pad-top-10">
+                <button id="btnSubmitAnswer" class="btn btn-primary">Submit Answer</button>
+            </div>
 
             <div class="clearfix"></div>
             <br /><br /><br /><br /><br />
@@ -90,6 +112,10 @@
 
             <div style="display:none">
                 @Html.TextBox("correct-answer", "", new { @class = "hidden-control" })
+            </div>
+
+            <div style="display:none">
+                @Html.TextBox("txtBoundary", "", new { @class="hidden-control"})
             </div>
         </div>
     </div>
