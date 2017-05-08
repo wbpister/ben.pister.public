@@ -188,6 +188,16 @@
     <Content Include="Doc_Resources\Ben Pister%27s Resume.docx" />
     <Content Include="Doc_Resources\Ben Pister Resume.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="ImagesGame\fish_small.jpg" />
+    <Content Include="ImagesGame\green_balloon.jpg" />
+    <Content Include="ImagesGame\lightblue_balloon.jpg" />
+    <Content Include="ImagesGame\orange-yellow_balloon.jpg" />
+    <Content Include="ImagesGame\orange_balloon.jpg" />
+    <Content Include="ImagesGame\shark.jpg" />
+    <Content Include="ImagesGame\shark.png" />
+    <Content Include="ImagesGame\small_fish.jpg" />
+    <Content Include="ImagesGame\small_fish.png" />
+    <Content Include="ImagesGame\yellow_balloon.jpg" />
     <Content Include="Images\Adirondack_Cascade.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -215,8 +225,8 @@
     <Content Include="Images\SwingingB.jpg" />
     <Content Include="Images\SwingingBridge.jpg" />
     <Content Include="Images\SwingingBridgePhoto.jpg" />
+    <Content Include="Scripts\ArithmeticActionGame.js" />
     <Content Include="Scripts\ArithmeticPage.js" />
-    <Content Include="Scripts\CssAnimationTest.js" />
     <Content Include="Scripts\Doc_View.js" />
     <Content Include="Scripts\InitializeButtons.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -242,6 +252,7 @@
     <Compile Include="Controllers\Interesting_InfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KentuckianaEatsController.cs" />
+    <Compile Include="Controllers\MathGameController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -277,6 +288,8 @@
     <Content Include="Views\KentuckianaEats\KIEats.cshtml" />
     <Content Include="Views\Shared\_resume.cshtml" />
     <Content Include="Views\Resume\Index.cshtml" />
+    <Content Include="Views\MathGame\Fish.cshtml" />
+    <Content Include="Views\MathGame\Balloons.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

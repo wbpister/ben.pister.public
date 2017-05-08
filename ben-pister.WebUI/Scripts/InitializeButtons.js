@@ -18,8 +18,6 @@
 
     $('#btnSubmitAnswer').click(function () { arithmetic_handle(); });
 
-    $('#my-tester-button').click(function () { showMeNow(); });
-
     $('#linked-in-btn').click(function () { navigateToLinkedIn(); });
 
     $('#hobbies-btn').click(function () {
@@ -27,6 +25,14 @@
     });
 
     $('#arithmeticGame').click(function () {
-        location.href = '/InformationEntry/HandleInformation';
+        window.location.replace('/InformationEntry/HandleInformation');
+    });
+
+    $('#startFishGame').click(function () {
+        gameActionFish();
+    });
+
+    $('#startBalloonGame').click(function () {
+        gameActionBalloon();
     });
 });

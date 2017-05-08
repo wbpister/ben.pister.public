@@ -1,7 +1,7 @@
 ﻿html, body {
     /*padding-top:25px;*/
     padding:30px 10px 20px 5px;
-    background-color:slategrey;
+    /*background-color:slategrey;*/
 }
 
 .bck_img{
@@ -48,6 +48,18 @@
 
 .arithmetic-bckgnd{
     background-color:lightgray;
+}
+
+.balloon-game-background{
+    background-color:black;
+}
+
+.fish-game-background{
+    background-color:#4445ca;  /*Other possible values starting with closest: #4844ca#463dd6#463ed0#4037d7*/
+}
+
+canvas{
+    border: 1px solid white;
 }
 
 .row{
