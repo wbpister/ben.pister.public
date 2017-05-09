@@ -1,26 +1,29 @@
-﻿function gameActionFish() {
+﻿function gameActionFish(x, y) {
     var fishCanvas = document.getElementById('fishCanvas');
-    //fishCanvas.width = window.innerWidth;
-    //fishCanvas.height = 600;
 
     var ctx = fishCanvas.getContext('2d');
-    var x = 50;
-    var y = 50;
+    ctx.save();
+    ctx.clearRect(0, 0, 1100, 700)
+    if (x < 1000) {
+        var img = new Image();
+        var imgTwo = new Image();
+        img.onload = function () {
+            //ctx.drawImage(img, x, y);
+            ctx.font = '16pt Times';
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'red';
+            //ctx.strokeText('124 X 37', x + 55, y + 70);
 
-    var img = new Image();
-    var imgTwo = new Image();
-    img.onload = function () {
-        ctx.drawImage(img, x, y);
-        ctx.font = '16pt Times';
-        ctx.lineWidth = 2;
-        ctx.strokeStyle = 'red';
-        ctx.strokeText('124 X 37', x + 55, y + 70);
+            ctx.drawImage(imgTwo, x, y + 320); //length of small_fish is 140px
+            ctx.strokeText('12 + 42', x + 35, y + 370);
+        }
+        img.src = '/ImagesGame/shark.png';
+        imgTwo.src = '/ImagesGame/small_fish.png';
 
-        ctx.drawImage(imgTwo, x + 200, y + 320);
-        ctx.strokeText('12 + 42', x + 235, y + 370);
+        ctx.restore();
     }
-    img.src = '/ImagesGame/shark.png';
-    imgTwo.src = '/ImagesGame/small_fish.png';
+    x += 2;
+    var loopTimer = setTimeout('gameActionFish(' + x + ',' + y + ')', 30);
 }
 
 function gameActionBalloon() {

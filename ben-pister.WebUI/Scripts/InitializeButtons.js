@@ -29,7 +29,7 @@
     });
 
     $('#startFishGame').click(function () {
-        gameActionFish();
+        gameActionFish(0, 50);
     });
 
     $('#startBalloonGame').click(function () {
