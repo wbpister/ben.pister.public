@@ -17,7 +17,8 @@ namespace ben_pister.WebUI.App_Start
                 "~/Scripts/InitializeButtons.js",
                 "~/Scripts/Doc_View.js",
                 "~/Scripts/ArithmeticPage.js",
-                "~/Scripts/ArithmeticActionGame.js"));
+                "~/Scripts/ArithmeticActionGame.js",
+                "~/Scripts/GamePiece.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/Site.css",

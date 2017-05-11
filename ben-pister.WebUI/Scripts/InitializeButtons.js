@@ -25,11 +25,12 @@
     });
 
     $('#arithmeticGame').click(function () {
-        window.location.replace('/InformationEntry/HandleInformation');
+        window.location.replace('/MathGame/Fish');
     });
 
     $('#startFishGame').click(function () {
         gameActionFish(0, 50);
+        document.getElementById('startFishGame').disabled = true;
     });
 
     $('#startBalloonGame').click(function () {
