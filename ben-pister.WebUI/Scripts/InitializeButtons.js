@@ -29,7 +29,7 @@
     });
 
     $('#startFishGame').click(function () {
-        gameActionFish(0, 50);
+        pieces(0, 50);
         document.getElementById('startFishGame').disabled = true;
     });
 

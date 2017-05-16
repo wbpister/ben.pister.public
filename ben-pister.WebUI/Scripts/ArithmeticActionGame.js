@@ -1,23 +1,38 @@
 ﻿
 
 function pieces(value1, value2) {
-    this.val1 = value1;
-    this.val2 = value2;
-    this.id = "sf";
+    var count = 0;
+
+    this.val1 = 12;
+    this.val2 = 42;
+    this.x = value1;
+    this.y = value2;
+    this.id = "sf" + count;
     this.image = "/ImagesGame/small_fish.png";
-    this.onclick = function () {
-        $('#txtAnswer').html(parseInt(value1) + parseInt(value2));
-    }
+    
+    $('#txtAnswer').html(parseInt(value1) + parseInt(value2));
+    gameAction();
+    gameActionFish(this);
+    
 }
 
-function gameActionFish(x, y) {
+function gameAction() {
+    $('#sf' + 0).click(function () {
+        $('#answer_input').focus();
+    });
+
+
+}
+
+function gameActionFish(piece) {
     var fishCanvas = document.getElementById('fishCanvas');
+    
 
     var ctx = fishCanvas.getContext('2d');
     ctx.save();
     ctx.clearRect(0, 0, 1100, 700)
     if (x < 1000) {
-        var piece = new pieces(12, 42);
+        //var piece = new pieces(12, 42);
         var img = new Image();
         var img2 = new Image();
         img.onload = function () {
@@ -27,16 +42,16 @@ function gameActionFish(x, y) {
             ctx.strokeStyle = 'red';
             //ctx.strokeText('124 X 37', x + 55, y + 70);
 
-            ctx.drawImage(img2, x, y + 320); //length of small_fish is 140px
-            ctx.strokeText('12 + 42', x + 35, y + 370);
+            ctx.drawImage(img2, piece.x, piece.y + 320); //length of small_fish is 140px
+            ctx.strokeText(piece.val1 + '+' + piece.val2, piece.x + 35, piece.y + 370);
         }
         img.src = '/ImagesGame/shark.png';
         img2.src = piece.image;
 
         ctx.restore();
     }
-    x += 2;
-    var loopTimer = setTimeout('gameActionFish(' + x + ',' + y + ')', 30);
+    piece.x += 1;
+    var loopTimer = setTimeout('gameActionFish(' + piece + ')', 50);
 }
 
 function gameActionBalloon() {
