@@ -21,7 +21,7 @@
 
 <body style="background-color:lightgrey">
     <div class="row">
-        <div class="col-md-6 col-xs-12 pad-top-45">
+        <div class="col-lg-5 col-md-6 col-xs-12 pad-top-75">
             <fieldset>
                 <legend>Difficulty Level</legend>
                 <div class="col-md-12">
@@ -41,7 +41,7 @@
                 </div>
             </fieldset>
         </div>
-        <div class="col-lg-4 col-md-4 col-xs-12 pad-top-10 text-center">
+        <div class="col-lg-7 col-md-6 col-xs-12 pad-top-10 text-center">
             <button id="showLevelInstructions">Show/Hide Level Selection Instructions</button><br />
             <table id="levelSelectionInstructions" class="table-responsive table-bordered table-striped level-instruction-table" style="display:none">
                 <thead>
@@ -71,25 +71,33 @@
                         <td>45 pts</td>
                         <td>60 pts</td>
                     </tr>
+                    
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            Three consecutive incorrect answers on one problem results in a 5 point score reduction with a minimum score of 0.<br />
+                            In this event, a calculation mode must be selected for another problem.
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
         
     </div>
     <br /><br />
     <div class="row">
-        <div class="col-md-4 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-xs-12">
             <div class="row text-left">
                 <div class="col-md-8 col-xs-12">
                     @Html.Label("Score", "Score", new { @class = "text-left" })
-                    @Html.TextBox("txtScore", "0", new { @id = "txtScore", @class = "form-control" })
+                    @Html.TextBox("txtScore", "0", new { @id = "txtScore", @class = "form-control pad-bottom-20" })
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-            <h4 class="text-left" style="font-size:10pt;padding-left:12px">For Division, round to three decimal places.</h4>
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-center">
             <div class="row">
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnAddition" class="btn btn-add">Addition</button>
@@ -118,7 +126,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 text-left">
+        <div class="col-lg-3 col-md-4 text-left">
             <div class="col-md-12">
                 <div class="col-md-2 col-sm-2 col-xs-3 sign-align">
                     <br />

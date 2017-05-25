@@ -57,7 +57,8 @@ function generateTwoNums(mode, num1, num2) {
         mode_feedback.multiplication(); 
     }
     else if (mode == 'd') { 
-        mode_feedback.division; 
+        mode_feedback.division();
+        $('#result-message').html("Round to three decimal places.");
     }
     print(mode, number1, number2, num1, num2);
 
@@ -200,8 +201,7 @@ function check_answer() {
 
             if (score > Number(5)) {
                 score = score -= 5;
-                alert(score);
-                $('#txtScore').val(reduceScore);
+                $('#txtScore').val(score);
             }
             document.getElementById('btnSubmitAnswer').disabled = true;
         }
