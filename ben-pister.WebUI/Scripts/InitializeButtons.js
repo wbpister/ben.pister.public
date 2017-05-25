@@ -70,14 +70,16 @@
         $('#numbersGenerated').val('0');
     });
 
-    var instructionVisible = true;
+    var instructionVisible = false;
     $('#showLevelInstructions').click(function () {
         if (instructionVisible) {
             document.getElementById('levelSelectionInstructions').style.display = "none";
             instructionVisible = false;
         }
         else {
-            document.getElementById('levelSelectionInstructions').style.display = "block";
+            document.getElementById('levelSelectionInstructions').style.display = "inline";
+            document.getElementById('levelSelectionInstructions').style.margin = "0 auto !important";
+            document.getElementById('levelSelectionInstructions').style.float = "none !important";
             instructionVisible = true;
         }
     });

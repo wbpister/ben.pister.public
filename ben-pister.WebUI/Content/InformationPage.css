@@ -69,3 +69,13 @@ fieldset{
     border:1px solid black;
     padding-bottom:0px 0px 0px 10px;
 }
+
+.no-line-break{
+    white-space:nowrap;
+}
+
+.level-instruction-table{
+    display:inline;
+    margin:0 auto !important;
+    float:none !important;
+}

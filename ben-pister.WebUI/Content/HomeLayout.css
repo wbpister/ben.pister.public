@@ -180,6 +180,14 @@ canvas{
     margin-top:24px;
 }
 
+.pad-top-35{
+    margin-top:35px;
+}
+
+.pad-top-45{
+    margin-top:45px;
+}
+
 
 .min-height-100{
     min-height:100px !important;

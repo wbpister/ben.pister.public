@@ -21,7 +21,7 @@
 
 <body style="background-color:lightgrey">
     <div class="row">
-        <div class="col-md-6 col-xs-12">
+        <div class="col-md-6 col-xs-12 pad-top-45">
             <fieldset>
                 <legend>Difficulty Level</legend>
                 <div class="col-md-12">
@@ -39,26 +39,49 @@
                         @Html.TextBox("levelSelected", null, new { @id = "levelSelected", @class="pad-bottom-10" })
                     </div>
                 </div>
-                
             </fieldset>
         </div>
-        <div class="col-md-6 col-xs-12">
+        <div class="col-lg-4 col-md-4 col-xs-12 pad-top-10 text-center">
             <button id="showLevelInstructions">Show/Hide Level Selection Instructions</button><br />
-            <span id="levelSelectionInstructions">
-                Level specific number generation is as follows: <br />
-                L1: two integers 1 to 2 digits long, inclusive <br />
-                L2: two integers 1 to 3 digits long, inclusive <br />
-                L3: two integers 1 to 4 digits long, inclusive
-            </span>
+            <table id="levelSelectionInstructions" class="table-responsive table-bordered table-striped level-instruction-table" style="display:none">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Addition / Subtraction</td>
+                        <td>Multiplication</td>
+                        <td>Division</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>L1</td>
+                        <td>10 pts</td>
+                        <td>15 pts</td>
+                        <td>20 pts</td>
+                    </tr>
+                    <tr>
+                        <td>L2</td>
+                        <td>20 pts</td>
+                        <td>30 pts</td>
+                        <td>40 pts</td>
+                    </tr>
+                    <tr>
+                        <td>L3</td>
+                        <td>30 pts</td>
+                        <td>45 pts</td>
+                        <td>60 pts</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
     </div>
     <br /><br />
     <div class="row">
         <div class="col-md-4 col-xs-12">
-            <div class="row">
+            <div class="row text-left">
                 <div class="col-md-8 col-xs-12">
-                    @Html.Label("Score", "Score")
+                    @Html.Label("Score", "Score", new { @class = "text-left" })
                     @Html.TextBox("txtScore", "0", new { @id = "txtScore", @class = "form-control" })
                 </div>
             </div>
