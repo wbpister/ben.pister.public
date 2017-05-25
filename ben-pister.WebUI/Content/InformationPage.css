@@ -11,6 +11,11 @@
     text-align:left;
 }
 
+.level-buttons{
+    height:28px !important;
+    padding: 0px 10px 0px 15px;
+}
+
 .btn-add{
     background-color:green;
     color:white;
@@ -50,4 +55,17 @@
 
 .arithmeticWeight{
     font-weight:800;
+}
+
+legend{
+    color:black;
+    font-weight:bold;
+    font-size:14px;
+    text-align:left;
+    padding-bottom:0px 0px 0px 10px;
+}
+
+fieldset{
+    border:1px solid black;
+    padding-bottom:0px 0px 0px 10px;
 }

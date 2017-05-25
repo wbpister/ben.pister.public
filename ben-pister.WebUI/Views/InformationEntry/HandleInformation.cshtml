@@ -9,52 +9,83 @@
 </head>
 
 <div class="row">
-    <div class="col-md-12 ">
-        <span class="text-info">I am developing an arithmetic game for this page.</span>
-    </div>
     <div class="col-md-12">
-        <h4 class="pad-bottom-50">
+        <h4>
             I enjoy working math problems in my head for exercise, an idea inspired by two math instructors:<br />
             a junior high math instructor and my high school calculus instructor.
         </h4>
-    </div>
+        
+        <span class="text-info">This will likely be a continually evolving work.<br /> I love math-based games of various kinds.</span>
+</div>
 </div>
 
 <body style="background-color:lightgrey">
-    <div class="row" style="display:none">
-        <div class="col-md-6">
-            <div class="col-md-2 pad-top-10">
-                <button class="btn btn-default">L1</button>
-            </div>
-            <div class="col-md-2 pad-top-10">
-                <button class="btn btn-success">L2</button>
-            </div>
-            <div class="col-md-2 pad-top-10">
-                <button class="btn btn-danger">L3</button>
-            </div>
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <fieldset>
+                <legend>Difficulty Level</legend>
+                <div class="col-md-12">
+                    <div class="col-md-2 pad-top-25">
+                        <button id="btnL1" class="btn btn-default level-buttons">L1</button>
+                    </div>
+                    <div class="col-md-2 pad-top-25">
+                        <button id="btnL2" class="btn btn-success level-buttons">L2</button>
+                    </div>
+                    <div class="col-md-2 pad-top-25">
+                        <button id="btnL3" class="btn btn-danger level-buttons">L3</button>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        @Html.Label("Selected Level", "Selected Level")<div class="clearfix"></div>
+                        @Html.TextBox("levelSelected", null, new { @id = "levelSelected", @class="pad-bottom-10" })
+                    </div>
+                </div>
+                
+            </fieldset>
         </div>
-        <div class="col-md-6">
-
+        <div class="col-md-6 col-xs-12">
+            <button id="showLevelInstructions">Show/Hide Level Selection Instructions</button><br />
+            <span id="levelSelectionInstructions">
+                Level specific number generation is as follows: <br />
+                L1: two integers 1 to 2 digits long, inclusive <br />
+                L2: two integers 1 to 3 digits long, inclusive <br />
+                L3: two integers 1 to 4 digits long, inclusive
+            </span>
+        </div>
+        
+    </div>
+    <br /><br />
+    <div class="row">
+        <div class="col-md-4 col-xs-12">
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    @Html.Label("Score", "Score")
+                    @Html.TextBox("txtScore", "0", new { @id = "txtScore", @class = "form-control" })
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-            <h4 class="text-left">For Division, round to three decimal places.</h4>
+            <h4 class="text-left" style="font-size:10pt;padding-left:12px">For Division, round to three decimal places.</h4>
             <div class="row">
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnAddition" class="btn btn-add">Addition</button>
+                    <span id="mode_a"></span>
                 </div>
                 <br />
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnSubtraction" class="btn btn-sub">Subtraction</button>
+                    <span id="mode_s"></span>
                 </div>
                 <br />
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnMultiplication" class="btn btn-mul">Multiplication</button>
+                    <span id="mode_m"></span>
                 </div>
                 <br />
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnDivision" class="btn btn-div">Division</button>
+                    <span id="mode_d"></span>
                 </div>
                 <br />
                 
@@ -111,7 +142,19 @@
             </div>
 
             <div style="display:none">
-                @Html.TextBox("correct-answer", "", new { @class = "hidden-control" })
+                @Html.TextBox("correct-answer", "", new { @class="hidden-control" })
+            </div>
+
+            <div style="display:none">
+                @Html.TextBox("submitStatus", "0", new { @id="submitStatus", @class="hidden-control" })
+            </div>
+
+            <div style="display:none">
+                @Html.TextBox("numbersGenerated", "0", new { @id="numbersGenerated", @class="hidden-control" })
+            </div>
+
+            <div style="display:none">
+                @Html.TextBox("attempts", "0", new { @id="attempts", @class="hidden-control" })
             </div>
 
             <div style="display:none">

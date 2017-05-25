@@ -1,14 +1,50 @@
-﻿function generateTwoNums(mode, num1, num2) {
+﻿function setUpEquation(mode) {
+    $('#submitStatus').val('0');
+    $('#attempts').val('0');
+    document.getElementById('btnSubmitAnswer').disabled = false;
 
-    $('#txtBoundary').val(101);
+    //Set id's for controls to be updated with values a & b
+    var number1 = 'num1';
+    var number2 = 'num2';
+    var levelDifficulty = getDifficultyLevel();
+    var numbersGenerated = $('#numbersGenerated').val();
+
+    //Generate two numbers, calculate and store the outcome according to calculation mode selected
+    if (levelDifficulty != 0) {
+        if (numbersGenerated != '1') {
+            generateTwoNums(mode, number1, number2);
+        }
+    }
+    else {
+        $('#mode_' + mode).html('Please select a difficulty level first.');
+    }
+}
+
+function getDifficultyLevel() {
+    var level = $('#levelSelected').val();
+    return Number(level);
+}
+
+function clearModeButtonErrors() {
+    $('#mode_a').html('');
+    $('#mode_s').html('');
+    $('#mode_m').html('');
+    $('#mode_d').html('');
+    $('#attempts').val('0');
+    document.getElementById('btnSubmitAnswer').disabled = false;
+}
+
+function generateTwoNums(mode, num1, num2) {
+
+    var upperNumberBound = $('#txtBoundary').val();
     $('#txt-mode').val(mode);
     $('#answer').val('');
     $('#result-message').html('');
 
-    var number1 = Math.floor((Math.random() * $('#txtBoundary').val()) + 1);
+    var number1 = Math.floor((Math.random() * upperNumberBound) + 1);
     $('#txtNum1').val(number1);
 
-    var number2 = Math.floor((Math.random() * $('#txtBoundary').val()) + 1);
+    var number2 = Math.floor((Math.random() * upperNumberBound) + 1);
     $('#txtNum2').val(number2);
 
     if (mode == 'a') { 
@@ -24,6 +60,8 @@
         mode_feedback.division; 
     }
     print(mode, number1, number2, num1, num2);
+
+    $('#numbersGenerated').val('1');
 }
 
 var mode_feedback = {
@@ -52,11 +90,13 @@ function print(mode, number1, number2, num1, num2) {
     if (length1 == 1) { $('#' + num1).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number1); }
     else if (length1 == 2) { $('#' + num1).html('&nbsp;&nbsp;' + number1); }
     else if (length1 == 3) { $('#' + num1).html(number1); }
+    else if (length1 == 4) { $('#' + num1).html(number1); }
 
     printStr = '';
     if (length2 == 1) { $('#' + num2).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number2); }
     else if (length2 == 2) { $('#' + num2).html('&nbsp;&nbsp;' + number2); }
     else if (length2 == 3) { $('#' + num2).html(number2); }
+    else if (length2 == 4) { $('#' + num2).html(number2); }
     
     $('#arithmeticSign').html(sign.getSign(mode));
 }
@@ -119,6 +159,8 @@ function arithmetic_handle() {
     $('#correct-answer').val(result);
 
     check_answer();
+
+    
 }
 
 function check_answer() {
@@ -141,9 +183,61 @@ function check_answer() {
 
     else if (correct == submitted) {
         $('#result-message').html('Congratulations, you are correct!  :)');
+        performScoreIncrease();
+        $('#submitStatus').val(1);
     }
 
     else {
         $('#result-message').html('Sorry, that is incorrect.  :(');
+
+        var attempts = $('#attempts').val();
+        attempts = Number(attempts) + Number(1);
+        $('#attempts').val(attempts);
+        if (attempts >= 8) {
+            alert('The correct answer is ' + $('#correct-answer').val());
+
+            var score = Number($('#txtScore').val());
+
+            if (score > Number(5)) {
+                score = score -= 5;
+                alert(score);
+                $('#txtScore').val(reduceScore);
+            }
+            document.getElementById('btnSubmitAnswer').disabled = true;
+        }
+    }
+}
+
+function performScoreIncrease() {
+    var currentScore = Number($('#txtScore').val());
+    var scoreIncreaseMeasure = getModeCalculation();
+    $('#txtScore').val(currentScore += scoreIncreaseMeasure);
+}
+
+function getModeCalculation() {
+    var mode = $('#txt-mode').val();
+
+    if (mode == 'a' || mode == 's') {  //Level 1: 10 pts, Level 2: 15 pts, Level 3: 20 pts
+        return 10 * getLevelCoefficient();
+    }
+    else if (mode == 'm') {  //Level 1: 20 pts, Level 2: 30 pts, Level 3: 40 pts
+        return 20 * getLevelCoefficient();
+    }
+    else if (mode == 'd') {  //Level 1: 30 pts, Level 2: 45 pts, Level 3: 60 pts
+        return 30 * getLevelCoefficient();
+    }
+}
+
+function getLevelCoefficient() {
+    var level = Number($('#levelSelected').val());
+
+    if (level == 1) {
+        return 1;
+    }
+    if (level == 2) {
+        return 1.5;
+    }
+    if (level == 3) {
+        return 2;
     }
 }
