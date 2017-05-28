@@ -74,10 +74,12 @@
     $('#showLevelInstructions').click(function () {
         if (instructionVisible) {
             document.getElementById('levelSelectionInstructions').style.display = "none";
+            $('#showLevelInstructions').html("Show Level Selection Instructions");
             instructionVisible = false;
         }
         else {
             document.getElementById('levelSelectionInstructions').style.display = "inline";
+            $('#showLevelInstructions').html("Hide Level Selection Instructions");
             document.getElementById('levelSelectionInstructions').style.margin = "0 auto !important";
             document.getElementById('levelSelectionInstructions').style.float = "none !important";
             instructionVisible = true;
