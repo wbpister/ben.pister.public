@@ -221,10 +221,10 @@ function getModeCalculation() {
         return 10 * getLevelCoefficient();
     }
     else if (mode == 'm') {  //Level 1: 20 pts, Level 2: 30 pts, Level 3: 40 pts
-        return 20 * getLevelCoefficient();
+        return 40 * getLevelCoefficient();
     }
     else if (mode == 'd') {  //Level 1: 30 pts, Level 2: 45 pts, Level 3: 60 pts
-        return 30 * getLevelCoefficient();
+        return 50 * getLevelCoefficient();
     }
 }
 
@@ -235,9 +235,9 @@ function getLevelCoefficient() {
         return 1;
     }
     if (level == 2) {
-        return 1.5;
+        return 7;
     }
     if (level == 3) {
-        return 2;
+        return 12;
     }
 }
