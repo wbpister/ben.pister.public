@@ -3,7 +3,7 @@
 }
 
 .arithmetic_btn{
-    margin-bottom:20px;
+    margin:0px 0px 10px 0px;
 }
 
 .label-space{
@@ -78,4 +78,8 @@ fieldset{
     display:inline;
     margin:0 auto !important;
     float:none !important;
+}
+
+.underline{
+    text-decoration:underline;
 }
