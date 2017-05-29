@@ -14,9 +14,9 @@
             I enjoy working math problems in my head for exercise, an idea inspired by two math instructors:<br />
             a junior high math instructor and my high school calculus instructor.
         </h4>
-        
+
         <span class="text-info">This will likely be a continually evolving work.<br /> I love math-based games of various kinds.</span>
-</div>
+    </div>
 </div>
 
 <body style="background-color:lightgrey">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-6 col-xs-12">
                         @Html.Label("Selected Level", "Selected Level")<div class="clearfix"></div>
-                        @Html.TextBox("levelSelected", null, new { @id = "levelSelected", @class="pad-bottom-10" })
+                        @Html.TextBox("levelSelected", null, new { @id = "levelSelected", @readonly="readonly", @class = "pad-bottom-10" })
                     </div>
                 </div>
             </fieldset>
@@ -71,7 +71,7 @@
                         <td>350 pts</td>
                         <td>600 pts</td>
                     </tr>
-                    
+
                 </tbody>
                 <tfoot>
                     <tr>
@@ -83,7 +83,7 @@
                 </tfoot>
             </table>
         </div>
-        
+
     </div>
     <br /><br />
     <div class="row">
@@ -91,7 +91,7 @@
             <div class="row text-left">
                 <div class="col-md-8 col-xs-12">
                     @Html.Label("Score", "Score", new { @class = "text-left" })
-                    @Html.TextBox("txtScore", "0", new { @id = "txtScore", @class = "form-control pad-bottom-20" })
+                    @Html.TextBox("txtScore", "0", new { @id = "txtScore", @readonly = "readonly", @class = "form-control pad-bottom-20" })
                 </div>
             </div>
         </div>
@@ -103,22 +103,22 @@
                     <button id="btnAddition" class="btn btn-add">Addition</button>
                     <span id="mode_a"></span>
                 </div>
-                
+
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnSubtraction" class="btn btn-sub">Subtraction</button>
                     <span id="mode_s"></span>
                 </div>
-                
+
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnMultiplication" class="btn btn-mul">Multiplication</button>
                     <span id="mode_m"></span>
                 </div>
-                
+
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnDivision" class="btn btn-div">Division</button>
                     <span id="mode_d"></span>
                 </div>
-                
+
                 <div id="selectedModeFeedback" style="display:none">
 
                 </div>
@@ -138,7 +138,7 @@
             </div>
             <div class="clearfix"></div>
 
-            
+
             <div class="col-md-8">
                 <label class="label-space">Your answer</label>
                 @Html.TextBox("answer", null, new { @class = "form-control" })
@@ -171,26 +171,24 @@
             </div>
 
             <div style="display:none">
-                @Html.TextBox("correct-answer", "", new { @class="hidden-control" })
+                @Html.TextBox("correct-answer", "", new { @class = "hidden-control" })
             </div>
 
             <div style="display:none">
-                @Html.TextBox("submitStatus", "0", new { @id="submitStatus", @class="hidden-control" })
+                @Html.TextBox("submitStatus", "0", new { @id = "submitStatus", @class = "hidden-control" })
             </div>
 
             <div style="display:none">
-                @Html.TextBox("numbersGenerated", "0", new { @id="numbersGenerated", @class="hidden-control" })
+                @Html.TextBox("numbersGenerated", "0", new { @id = "numbersGenerated", @class = "hidden-control" })
             </div>
 
             <div style="display:none">
-                @Html.TextBox("attempts", "0", new { @id="attempts", @class="hidden-control" })
+                @Html.TextBox("attempts", "0", new { @id = "attempts", @class = "hidden-control" })
             </div>
 
             <div style="display:none">
-                @Html.TextBox("txtBoundary", "", new { @class="hidden-control"})
+                @Html.TextBox("txtBoundary", "", new { @class = "hidden-control" })
             </div>
         </div>
     </div>
 </body>
-
-

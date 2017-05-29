@@ -217,13 +217,13 @@ function performScoreIncrease() {
 function getModeCalculation() {
     var mode = $('#txt-mode').val();
 
-    if (mode == 'a' || mode == 's') {  //Level 1: 10 pts, Level 2: 15 pts, Level 3: 20 pts
+    if (mode == 'a' || mode == 's') {  //Level 1: 10 pts, Level 2: 40 pts, Level 3: 50 pts
         return 10 * getLevelCoefficient();
     }
-    else if (mode == 'm') {  //Level 1: 20 pts, Level 2: 30 pts, Level 3: 40 pts
+    else if (mode == 'm') {  //Level 1: 40 pts, Level 2: 280 pts, Level 3: 480 pts
         return 40 * getLevelCoefficient();
     }
-    else if (mode == 'd') {  //Level 1: 30 pts, Level 2: 45 pts, Level 3: 60 pts
+    else if (mode == 'd') {  //Level 1: 50 pts, Level 2: 350 pts, Level 3: 600 pts
         return 50 * getLevelCoefficient();
     }
 }
@@ -235,7 +235,7 @@ function getLevelCoefficient() {
         return 1;
     }
     if (level == 2) {
-        return 7;
+        return 8;
     }
     if (level == 3) {
         return 12;
