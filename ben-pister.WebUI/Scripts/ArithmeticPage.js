@@ -194,7 +194,7 @@ function check_answer() {
         var attempts = $('#attempts').val();
         attempts = Number(attempts) + Number(1);
         $('#attempts').val(attempts);
-        if (attempts >= 8) {
+        if (attempts >= 8) {  //for some reason this is hit twice. 8 is actually 4 here
             alert('The correct answer is ' + $('#correct-answer').val());
 
             var score = Number($('#txtScore').val());
@@ -217,13 +217,13 @@ function performScoreIncrease() {
 function getModeCalculation() {
     var mode = $('#txt-mode').val();
 
-    if (mode == 'a' || mode == 's') {  //Level 1: 10 pts, Level 2: 40 pts, Level 3: 50 pts
+    if (mode == 'a' || mode == 's') {  //Level 1: 10 pts, Level 2: 80 pts, Level 3: 120 pts
         return 10 * getLevelCoefficient();
     }
-    else if (mode == 'm') {  //Level 1: 40 pts, Level 2: 280 pts, Level 3: 480 pts
+    else if (mode == 'm') {  //Level 1: 40 pts, Level 2: 320 pts, Level 3: 480 pts
         return 40 * getLevelCoefficient();
     }
-    else if (mode == 'd') {  //Level 1: 50 pts, Level 2: 350 pts, Level 3: 600 pts
+    else if (mode == 'd') {  //Level 1: 50 pts, Level 2: 400 pts, Level 3: 600 pts
         return 50 * getLevelCoefficient();
     }
 }
