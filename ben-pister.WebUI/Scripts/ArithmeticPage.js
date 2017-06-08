@@ -2,6 +2,7 @@
     $('#submitStatus').val('0');
     $('#attempts').val('0');
     document.getElementById('btnSubmitAnswer').disabled = false;
+    document.getElementById('answer').focus();
 
     //Set id's for controls to be updated with values a & b
     var number1 = 'num1';
@@ -25,33 +26,26 @@ function getDifficultyLevel() {
     return Number(level);
 }
 
-function clearModeButtonErrors() {
-    $('#mode_a').html('');
-    $('#mode_s').html('');
-    $('#mode_m').html('');
-    $('#mode_d').html('');
-    $('#attempts').val('0');
-    document.getElementById('btnSubmitAnswer').disabled = false;
-}
-
 function generateTwoNums(mode, num1, num2) {
 
     var upperNumberBound = $('#txtBoundary').val();
+    var lowerNumberBound = $('#txtMin').val();
     $('#txt-mode').val(mode);
     $('#answer').val('');
     $('#result-message').html('');
 
-    var number1 = Math.floor((Math.random() * upperNumberBound) + 1);
+    var number1 = Math.floor((Math.random() * (upperNumberBound - lowerNumberBound)) + 1);
     $('#txtNum1').val(number1);
 
-    var number2 = Math.floor((Math.random() * upperNumberBound) + 1);
+    var number2 = Math.floor((Math.random() * (upperNumberBound - lowerNumberBound)) + 1);
     $('#txtNum2').val(number2);
 
     if (mode == 'a') { 
         mode_feedback.addition();
     }
     else if (mode == 's') { 
-        mode_feedback.subtraction(); 
+        mode_feedback.subtraction();
+        $('#result-message').html('Answer may be negative');
     }
     else if (mode == 'm') { 
         mode_feedback.multiplication(); 
@@ -221,10 +215,10 @@ function getModeCalculation() {
         return 10 * getLevelCoefficient();
     }
     else if (mode == 'm') {  //Level 1: 40 pts, Level 2: 320 pts, Level 3: 480 pts
-        return 40 * getLevelCoefficient();
+        return 100 * getLevelCoefficient();
     }
     else if (mode == 'd') {  //Level 1: 50 pts, Level 2: 400 pts, Level 3: 600 pts
-        return 50 * getLevelCoefficient();
+        return 200 * getLevelCoefficient();
     }
 }
 
@@ -235,9 +229,77 @@ function getLevelCoefficient() {
         return 1;
     }
     if (level == 2) {
-        return 8;
+        return 10;
     }
     if (level == 3) {
-        return 12;
+        return 15;
     }
+}
+
+
+function gameCounter() {
+    var count = 301;
+
+    var counter = setInterval(decrement, 1000);
+
+    function decrement() {
+        count = count - 1;
+
+        $('#txtCountdown').val(count);
+
+        if (count <= 0) {
+            clearInterval(counter);
+            gameOver_DisableAll();
+            return;
+        }
+    }
+}
+
+function gameCounterStop() {
+    clearInterval(counter);
+    $('#txtCountdown').val('');
+    return;
+}
+
+function setLevelSelectionsStatus(assignBoolean) {
+    document.getElementById('btnL1').disabled = assignBoolean;
+    document.getElementById('btnL2').disabled = assignBoolean;
+    document.getElementById('btnL3').disabled = assignBoolean;
+}
+
+function levelButtonActions() {
+    clearModeButtonErrors();
+    $('#numbersGenerated').val('0');
+    $('resetStatusMessage').innerHTML = '';
+    setLevelSelectionsStatus(true);
+}
+
+function clearModeButtonErrors() {
+    clearMessages();
+    arithmeticButtonsStatus(false);
+    $('#attempts').val('0');
+    $('#txtScore').val('0');
+    $('#txtCountdown').val('');
+}
+
+function clearMessages() {
+    $('#mode_a').html('');
+    $('#mode_s').html('');
+    $('#mode_m').html('');
+    $('#mode_d').html('');
+}
+
+function gameOver_DisableAll() {
+    clearMessages();
+    arithmeticButtonsStatus(true);
+    setLevelSelectionsStatus(true);
+    $('#result-message').html('Game Over!  Your score: ' + $('#txtScore').val());
+}
+
+function arithmeticButtonsStatus(arithButtonStatus) {
+    document.getElementById('btnAddition').disabled = arithButtonStatus;
+    document.getElementById('btnSubtraction').disabled = arithButtonStatus;
+    document.getElementById('btnMultiplication').disabled = arithButtonStatus;
+    document.getElementById('btnDivision').disabled = arithButtonStatus;
+    document.getElementById('btnSubmitAnswer').disabled = arithButtonStatus;
 }

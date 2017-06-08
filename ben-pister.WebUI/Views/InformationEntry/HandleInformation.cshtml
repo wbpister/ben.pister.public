@@ -21,6 +21,93 @@
 
 <body style="background-color:lightgrey">
     <div class="row">
+        <div class="col-lg-5 col-md-6 col-xs-12 pad-top-10 text-center">
+            <button id="gameInstructions">Show Game Play Instructions</button><br />
+            <table id="gamePlayInstructions" class="table-responsive table-bordered table-striped level-instruction-table" style="display:none">
+                <thead>
+                    <tr>
+                        <td><strong>Game Play Instructions</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            The goal of this "game" is for individuals to solve as many math problems as possible in 5 minutes (300 seconds).<br />
+                            It is, of course, not possible to restrict calculators but I do encourage people to challenge themselves
+                            to use their great built-in computer, the human brain (on paper if needed, of course). <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Once a level is selected, this will be the level for the duration of the 5 minutes. <br />
+                            If another level is desired, there is a "Reset Game" button at the bottom of the page.<br />
+                            I have attempted to adjust scoring to the difficulty level of both level selection and 
+                            mathematical operation selected.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>When a game has ended, click or tap the "Reset Game" button to start a new game.</strong>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            Three consecutive incorrect answers on one problem results in a 5 point score reduction with a minimum score of 0.<br />
+                            In this event, a calculation mode must be selected for another problem.
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+        <div class="col-lg-7 col-md-6 col-xs-12 pad-top-10 text-center">
+            <button id="showLevelInstructions">Show Level Selection Instructions</button><br />
+            <table id="levelSelectionInstructions" class="table-responsive table-bordered table-striped level-instruction-table" style="display:none">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Addition / Subtraction</td>
+                        <td>Multiplication</td>
+                        <td>Division</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>L1</td>
+                        <td>10 pts</td>
+                        <td>100 pts</td>
+                        <td>200 pts</td>
+                    </tr>
+                    <tr>
+                        <td>L2</td>
+                        <td>100 pts</td>
+                        <td>@(100 * 10) pts</td>
+                        <td>@(200 * 10) pts</td>
+                    </tr>
+                    <tr>
+                        <td>L3</td>
+                        <td>150 pts</td>
+                        <td>@(100 * 15) pts</td>
+                        <td>@(200 * 15) pts</td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            Three consecutive incorrect answers on one problem results in a 5 point score reduction with a minimum score of 0.<br />
+                            In this event, a calculation mode must be selected for another problem.
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-lg-5 col-md-6 col-xs-12 pad-top-75">
             <fieldset>
                 <legend>Difficulty Level</legend>
@@ -41,51 +128,20 @@
                 </div>
             </fieldset>
         </div>
-        <div class="col-lg-7 col-md-6 col-xs-12 pad-top-10 text-center">
-            <button id="showLevelInstructions">Show Level Selection Instructions</button><br />
-            <table id="levelSelectionInstructions" class="table-responsive table-bordered table-striped level-instruction-table" style="display:none">
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td>Addition / Subtraction</td>
-                        <td>Multiplication</td>
-                        <td>Division</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>L1</td>
-                        <td>10 pts</td>
-                        <td>40 pts</td>
-                        <td>50 pts</td>
-                    </tr>
-                    <tr>
-                        <td>L2</td>
-                        <td>40 pts</td>
-                        <td>@(40 * 8) pts</td>
-                        <td>@(40 * 12) pts</td>
-                    </tr>
-                    <tr>
-                        <td>L3</td>
-                        <td>50 pts</td>
-                        <td>@(50 * 8) pts</td>
-                        <td>@(50 * 12) pts</td>
-                    </tr>
-
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4">
-                            Three consecutive incorrect answers on one problem results in a 5 point score reduction with a minimum score of 0.<br />
-                            In this event, a calculation mode must be selected for another problem.
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+        
 
     </div>
     <br /><br />
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-xs-12">
+            <div class="row text-left">
+                <div class="col-md-8 col-xs-12">
+                    @Html.Label("timerRemaining", "timeRemaining", new { @class = "text-left" })
+                    @Html.TextBox("txtCountdown", "", new { @id = "txtCountdown", @readonly="readonly", @class="form-control pad-bottom-20" })
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-3 col-md-4 col-xs-12">
             <div class="row text-left">
@@ -119,6 +175,11 @@
                     <span id="mode_d"></span>
                 </div>
 
+                <div class="col-md-8 arithmetic_btn">
+                    <button id="resetGame" class="btn btn-default">Reset Game</button>
+                    <span id="resetStatusMessage"></span>
+                </div>
+                
                 <div id="selectedModeFeedback" style="display:none">
 
                 </div>
@@ -189,6 +250,11 @@
             <div style="display:none">
                 @Html.TextBox("txtBoundary", "", new { @class = "hidden-control" })
             </div>
+
+            <div style="display:none">
+                @Html.TextBox("txtMin", "", new { @class = "hidden-control" })
+            </div>
         </div>
     </div>
+    <br /><br /><br />
 </body>

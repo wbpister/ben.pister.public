@@ -53,21 +53,24 @@
 
     $('#btnL1').on("click", function () {
         $('#levelSelected').val("1");
-        clearModeButtonErrors();
         $('#txtBoundary').val(101);
-        $('#numbersGenerated').val('0');
+        $('#txtMin').val(1);
+        levelButtonActions();
+        gameCounter();
     });
     $('#btnL2').on("click", function () {
         $('#levelSelected').val('2');
-        clearModeButtonErrors();
         $('#txtBoundary').val(1001);
-        $('#numbersGenerated').val('0');
+        $('#txtMin').val(10);
+        levelButtonActions();
+        gameCounter();
     });
     $('#btnL3').on("click", function () {
         $('#levelSelected').val('3');
-        clearModeButtonErrors();
         $('#txtBoundary').val(10001);
-        $('#numbersGenerated').val('0');
+        $('#txtMin').val(100);
+        levelButtonActions();
+        gameCounter();
     });
 
     var instructionVisible = false;
@@ -84,5 +87,29 @@
             document.getElementById('levelSelectionInstructions').style.float = "none !important";
             instructionVisible = true;
         }
+    });
+
+    var gamePlayInstructionVisible = false;
+    $('#gameInstructions').click(function () {
+        if (gamePlayInstructionVisible) {
+            document.getElementById('gamePlayInstructions').style.display = "none";
+            $('#gameInstructions').html("Show Game Play Instructions");
+            gamePlayInstructionVisible = false;
+        }
+        else {
+            document.getElementById('gamePlayInstructions').style.display = "inline";
+            $('#gameInstructions').html("Hide Game Play Instructions");
+            document.getElementById('gamePlayInstructions').style.margin = "0 auto !important";
+            document.getElementById('gamePlayInstructions').style.float = "none !important";
+            gamePlayInstructionVisible = true;
+        }
+    });
+
+    $('#resetGame').click(function () {
+        window.location.replace('/InformationEntry/HandleInformation');
+        //setLevelSelectionsStatus(false);
+        //clearModeButtonErrors();
+        //gameCounterStop();
+        $('resetStatusMessage').innerHTML = 'Game successfully reset';
     });
 });
