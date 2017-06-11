@@ -112,4 +112,16 @@
         //gameCounterStop();
         $('resetStatusMessage').innerHTML = 'Game successfully reset';
     });
+
+    $('#answer').keydown(function (e) {
+        if (e.keyCode === 13) {
+            var submitStatus = $('#submitStatus').val();
+
+            //Eliminate duplicated code execution
+            if (Number(submitStatus) == 0) {
+                arithmetic_handle();
+                $('#numbersGenerated').val('0');
+            }
+        }
+    });
 });

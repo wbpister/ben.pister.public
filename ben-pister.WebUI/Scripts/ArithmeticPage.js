@@ -191,6 +191,8 @@ function check_answer() {
         if (attempts >= 8) {  //for some reason this is hit twice. 8 is actually 4 here
             alert('The correct answer is ' + $('#correct-answer').val());
 
+            $('#result-message').html("Please select an operation to continue");
+
             var score = Number($('#txtScore').val());
 
             if (score > Number(5)) {
