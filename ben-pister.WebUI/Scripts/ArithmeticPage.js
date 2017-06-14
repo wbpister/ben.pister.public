@@ -184,8 +184,9 @@ function check_answer() {
     }
 
     else if (correct == submitted) {
-        $('#result-message').html('Congratulations, you are correct!  :)');
         performScoreIncrease();
+        $('#result-message').html('Congratulations, you are correct!  :)');
+        $('#mobileScoreUpdate').html('<strong>Current Score: ' + $('#txtScore').val() + '</strong>');
         $('#submitStatus').val(1);
     }
 
