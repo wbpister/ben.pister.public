@@ -34,33 +34,41 @@
     });
 
     $('#btnAddition').mouseenter(function () {
-        $('#mode_a').html("ALT + =");
+        $('#btnAddition').attr("style", "color:yellow");
+        $('#addShortcut').show();
     }).mouseleave(function () {
-        $('#mode_a').html('');
+        $('#btnAddition').attr("style", "color:white");
+        $('#addShortcut').hide();
     });
 
     $('#btnSubtraction').mouseenter(function () {
-        $('#mode_s').html("ALT + -");
+        $('#btnSubtraction').attr("style", "color:yellow");
+        $('#subtractShortcut').show();
     }).mouseleave(function () {
-        $('#mode_s').html('');
+        $('#btnSubtraction').attr("style", "color:white");
+        $('#subtractShortcut').hide();
     });
 
     $('#btnMultiplication').mouseenter(function () {
-        $('#mode_m').html("ALT + x");
+        $('#btnMultiplication').attr("style", "color:yellow");
+        $('#multiplyShortcut').show();
     }).mouseleave(function () {
-        $('#mode_m').html('');
+        $('#btnMultiplication').attr("style", "color:white");
+        $('#multiplyShortcut').hide();
     });
 
     $('#btnDivision').mouseenter(function () {
-        $('#mode_d').html("ALT + /");
+        $('#btnDivision').attr("style", "color:yellow");
+        $('#divideShortcut').show();
     }).mouseleave(function () {
-        $('#mode_d').html('');
+        $('#btnDivision').attr("style", "color:white");
+        $('#divideShortcut').hide();
     });
 
     $('#btnResetGame').mouseenter(function () {
-        $('#resetStatusMessage').html("CTRL + r");
+        $('#resetShortcut').show();
     }).mouseleave(function () {
-        $('#resetStatusMessage').html('');
+        $('#resetShortcut').hide();
     });
 
     $('#linked-in-btn').click(function () { navigateToLinkedIn(); });
