@@ -33,6 +33,36 @@
         }
     });
 
+    $('#btnAddition').mouseenter(function () {
+        $('#mode_a').html("ALT + =");
+    }).mouseleave(function () {
+        $('#mode_a').html('');
+    });
+
+    $('#btnSubtraction').mouseenter(function () {
+        $('#mode_s').html("ALT + -");
+    }).mouseleave(function () {
+        $('#mode_s').html('');
+    });
+
+    $('#btnMultiplication').mouseenter(function () {
+        $('#mode_m').html("ALT + x");
+    }).mouseleave(function () {
+        $('#mode_m').html('');
+    });
+
+    $('#btnDivision').mouseenter(function () {
+        $('#mode_d').html("ALT + /");
+    }).mouseleave(function () {
+        $('#mode_d').html('');
+    });
+
+    $('#btnResetGame').mouseenter(function () {
+        $('#resetStatusMessage').html("CTRL + r");
+    }).mouseleave(function () {
+        $('#resetStatusMessage').html('');
+    });
+
     $('#linked-in-btn').click(function () { navigateToLinkedIn(); });
 
     $('#hobbies-btn').click(function () {
@@ -46,7 +76,11 @@
     $('#startFishGame').click(function () {
         gameActionFish(0, 50);
     });
-
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 49) {
+            $('#btnL1').trigger("click");
+        }
+    });
     $('#startBalloonGame').click(function () {
         gameActionBalloon();
     });
@@ -71,6 +105,47 @@
         $('#txtMin').val(100);
         levelButtonActions();
         gameCounter();
+    });
+
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 49) {
+            $('#btnL1').trigger("click");
+        }
+    });
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 50) {
+            $('#btnL2').trigger("click");
+        }
+    });
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 51) {
+            $('#btnL3').trigger("click");
+        }
+    });
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 187) {
+            setUpEquation('a');
+        }
+    });
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 189) {
+            setUpEquation('s');
+        }
+    });
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 88) {
+            setUpEquation('m');
+        }
+    });
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.altKey && e.keyCode == 191) {
+            setUpEquation('d');
+        }
+    });
+    $('#arithmeticBodyId').keydown(function (e) {
+        if (e.ctrlKey && e.keyCode == 114) {
+            $('#btnResetGame').trigger("click");
+        }
     });
 
     var instructionVisible = false;
@@ -105,11 +180,24 @@
         }
     });
 
-    $('#resetGame').click(function () {
+    var keyBoardShortcutsVisible = false;
+    $('#btnKeyBoardShortcuts').click(function () {
+        if (keyBoardShortcutsVisible) {
+            document.getElementById('keyBoardShortcutTable').style.display = "none";
+            $('#btnKeyBoardShortcuts').html('Show KeyBoard Shortcuts');
+            keyBoardShortcutsVisible = false;
+        }
+        else {
+            document.getElementById('keyBoardShortcutTable').style.display = "inline";
+            $('#btnKeyBoardShortcuts').html('Hide KeyBoard Shortcuts');
+            document.getElementById('keyBoardShortcutTable').style.margin = "0 auto !important";
+            document.getElementById('keyBoardShortcutTable').style.float = "none !important";
+            keyBoardShortcutsVisible = true;
+        }
+    });
+
+    $('#btnResetGame').click(function () {
         window.location.replace('/InformationEntry/HandleInformation');
-        //setLevelSelectionsStatus(false);
-        //clearModeButtonErrors();
-        //gameCounterStop();
         $('resetStatusMessage').innerHTML = 'Game successfully reset';
     });
 

@@ -35,9 +35,16 @@ function generateTwoNums(mode, num1, num2) {
     $('#result-message').html('');
 
     var number1 = Math.floor((Math.random() * (upperNumberBound - lowerNumberBound)) + 1);
-    $('#txtNum1').val(number1);
 
     var number2 = Math.floor((Math.random() * (upperNumberBound - lowerNumberBound)) + 1);
+
+    if (number2 > number1) {
+        var temp = number1;
+        number1 = number2;
+        number2 = temp;
+    }
+
+    $('#txtNum1').val(number1);
     $('#txtNum2').val(number2);
 
     if (mode == 'a') { 
@@ -45,7 +52,6 @@ function generateTwoNums(mode, num1, num2) {
     }
     else if (mode == 's') { 
         mode_feedback.subtraction();
-        $('#result-message').html('Answer may be negative');
     }
     else if (mode == 'm') { 
         mode_feedback.multiplication(); 
@@ -54,6 +60,7 @@ function generateTwoNums(mode, num1, num2) {
         mode_feedback.division();
         $('#result-message').html("Round to three decimal places.");
     }
+
     print(mode, number1, number2, num1, num2);
 
     $('#numbersGenerated').val('1');
@@ -82,15 +89,15 @@ function print(mode, number1, number2, num1, num2) {
     var strLength1 = 0;
     var printStr = '';
 
-    if (length1 == 1) { $('#' + num1).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number1); }
-    else if (length1 == 2) { $('#' + num1).html('&nbsp;&nbsp;' + number1); }
-    else if (length1 == 3) { $('#' + num1).html(number1); }
+    if (length1 == 1) { $('#' + num1).html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + number1); }
+    else if (length1 == 2) { $('#' + num1).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number1); }
+    else if (length1 == 3) { $('#' + num1).html("&nbsp;&nbsp;" + number1); }
     else if (length1 == 4) { $('#' + num1).html(number1); }
 
     printStr = '';
-    if (length2 == 1) { $('#' + num2).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number2); }
-    else if (length2 == 2) { $('#' + num2).html('&nbsp;&nbsp;' + number2); }
-    else if (length2 == 3) { $('#' + num2).html(number2); }
+    if (length2 == 1) { $('#' + num2).html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + number2); }
+    else if (length2 == 2) { $('#' + num2).html('&nbsp;&nbsp;&nbsp;&nbsp;' + number2); }
+    else if (length2 == 3) { $('#' + num2).html("&nbsp;&nbsp;" + number2); }
     else if (length2 == 4) { $('#' + num2).html(number2); }
     
     $('#arithmeticSign').html(sign.getSign(mode));
@@ -173,7 +180,7 @@ function check_answer() {
     }
 
     else if (submitted == '') {
-        $('#result-message').html('Please select an operation and enter an answer to be checked.');
+        $('#result-message').html('Please select an operation <strong>AND</strong> enter an answer to be checked.');
     }
 
     else if (correct == submitted) {
@@ -241,15 +248,21 @@ function getLevelCoefficient() {
 
 function gameCounter() {
     var count = 301;
+    var minutes = Number(Math.floor(count / 60));
+    var seconds = Number(Math.floor(count % 60));
 
     var counter = setInterval(decrement, 1000);
 
     function decrement() {
-        count = count - 1;
+        seconds = seconds - 1;
+        if (seconds < 0) {
+            minutes = minutes - 1;
+            seconds = 59;
+        }
 
-        $('#txtCountdown').val(count);
+        $('#txtCountdown').val(minutes + " m : " + seconds + " s" );
 
-        if (count <= 0) {
+        if (minutes <= 0 && seconds <= 0) {
             clearInterval(counter);
             gameOver_DisableAll();
             return;

@@ -83,3 +83,8 @@ fieldset{
 .underline{
     text-decoration:underline;
 }
+
+.keyboard-shortcuts-header{
+    text-align:center;
+    font-weight:700;
+}
