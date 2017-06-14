@@ -264,7 +264,7 @@ function gameCounter() {
 
         $('#txtCountdown').val(minutes + " m : " + seconds + " s");
 
-        if (minutes == 1 && seconds == 0) {
+        if (minutes === 1 && seconds === 0) {
             alert("1 minute remaining");
         }
 
