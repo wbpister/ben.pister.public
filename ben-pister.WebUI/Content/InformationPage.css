@@ -18,26 +18,24 @@
 
 .btn-add{
     background-color:green;
-    color:white;
-    font-weight:700;
 }
 
 .btn-sub{
     background-color:green;
-    color:white;
-    font-weight:700;
 }
 
 .btn-mul{
     background-color: darkred;
-    color:white;
-    font-weight:700;
 }
 
 .btn-div{
     background-color:darkred;
+}
+
+.btn-operation{
     color:white;
     font-weight:700;
+    font-size:14pt;
 }
 
 #selectedModeFeedback{

@@ -17,7 +17,7 @@
         }
     }
     else {
-        $('#mode_' + mode).html('Please select a difficulty level first.');
+        $('#mode_update').html('Please select a difficulty level first.');
     }
 }
 
@@ -186,6 +186,7 @@ function check_answer() {
     else if (correct == submitted) {
         performScoreIncrease();
         $('#result-message').html('Congratulations, you are correct!  :)');
+        document.getElementById('btnSubmitAnswer').focus();
         $('#mobileScoreUpdate').html('<strong>Current Score: ' + $('#txtScore').val() + '</strong>');
         $('#submitStatus').val(1);
     }
@@ -261,7 +262,11 @@ function gameCounter() {
             seconds = 59;
         }
 
-        $('#txtCountdown').val(minutes + " m : " + seconds + " s" );
+        $('#txtCountdown').val(minutes + " m : " + seconds + " s");
+
+        if (minutes == 1 && seconds == 0) {
+            alert("1 minute remaining");
+        }
 
         if (minutes <= 0 && seconds <= 0) {
             clearInterval(counter);
@@ -303,6 +308,7 @@ function clearMessages() {
     $('#mode_s').html('');
     $('#mode_m').html('');
     $('#mode_d').html('');
+    $('#mode_update').html('');
 }
 
 function gameOver_DisableAll() {

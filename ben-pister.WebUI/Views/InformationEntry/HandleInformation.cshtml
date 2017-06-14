@@ -128,7 +128,7 @@
                 </div>
             </fieldset>
         </div>
-        <div class="col-lg-7 col-md-6 col-xs-12 pad-top-75" style="display:none">
+        <div class="col-lg-7 col-md-6 col-xs-12 pad-top-75 hidden-xs">
             <button id="btnKeyBoardShortcuts" class="pad-bottom-10">Show KeyBoard Shortcuts</button><br />
             <table id="keyBoardShortcutTable" class="table-responsive table-bordered table-striped col-xs-12" style="display:none">
                 <thead>
@@ -184,33 +184,37 @@
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-center">
             <div class="row">
-                <div class="col-md-8 arithmetic_btn">
-                    <button id="btnAddition" class="btn btn-add">
-                        Addition<span id="addShortcut" class="pad-left-5 shortcut-color" style="display:none">(ALT + =)</span>
+                <div class="col-md-4 col-xs-6 arithmetic_btn">
+                    <button id="btnAddition" class="btn btn-add btn-operation">
+                        +<span id="addShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm hidden-xs shortcut-color" style="display:none">(ALT + =)</span>
                     </button>
                     <span id="mode_a"></span>
                 </div>
 
-                <div class="col-md-8 arithmetic_btn">
-                    <button id="btnSubtraction" class="btn btn-sub">
-                        Subtraction<span id="subtractShortcut" class="pad-left-5 shortcut-color" style="display:none">(ALT + -)</span>
+                <div class="col-md-4 col-xs-6 arithmetic_btn">
+                    <button id="btnSubtraction" class="btn btn-sub btn-operation">
+                        --<span id="subtractShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm hidden-xs shortcut-color" style="display:none">(ALT + -)</span>
                     </button>
                     <span id="mode_s"></span>
                 </div>
+                <span id="mode_update"></span>
 
-                <div class="col-md-8 arithmetic_btn">
-                    <button id="btnMultiplication" class="btn btn-mul">
-                        Multiplication<span id="multiplyShortcut" class="pad-left-5 shortcut-color" style="display:none">(ALT + x)</span>
+                <div class="clearfix"></div>
+
+                <div class="col-md-4 col-xs-6 arithmetic_btn">
+                    <button id="btnMultiplication" class="btn btn-mul btn-operation">
+                        x<span id="multiplyShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm hidden-xs shortcut-color" style="display:none">(ALT + x)</span>
                     </button>
                     <span id="mode_m"></span>
                 </div>
 
-                <div class="col-md-8 arithmetic_btn">
-                    <button id="btnDivision" class="btn btn-div">
-                        Division<span id="divideShortcut" class="pad-left-5 shortcut-color" style="display:none">(ALT + /)</span>
+                <div class="col-md-4 col-xs-6 arithmetic_btn">
+                    <button id="btnDivision" class="btn btn-div btn-operation">
+                        /<span id="divideShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm  hidden-xs shortcut-color" style="display:none">(ALT + /)</span>
                     </button>
                     <span id="mode_d"></span>
                 </div>
+                <div class="clearfix"></div>
 
                 <div class="col-md-8 arithmetic_btn">
                     <button id="btnResetGame" class="btn btn-default">
