@@ -90,3 +90,7 @@ fieldset{
 .shortcut-color{
     color:yellow;
 }
+
+.message-pad-top{
+    padding-top:5px;
+}
