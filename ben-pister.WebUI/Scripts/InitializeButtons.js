@@ -33,38 +33,6 @@
         }
     });
 
-    $('#btnAddition').mouseenter(function () {
-        $('#btnAddition').attr("style", "color:yellow");
-        $('#addShortcut').show();
-    }).mouseleave(function () {
-        $('#btnAddition').attr("style", "color:white");
-        $('#addShortcut').hide();
-    });
-
-    $('#btnSubtraction').mouseenter(function () {
-        $('#btnSubtraction').attr("style", "color:yellow");
-        $('#subtractShortcut').show();
-    }).mouseleave(function () {
-        $('#btnSubtraction').attr("style", "color:white");
-        $('#subtractShortcut').hide();
-    });
-
-    $('#btnMultiplication').mouseenter(function () {
-        $('#btnMultiplication').attr("style", "color:yellow");
-        $('#multiplyShortcut').show();
-    }).mouseleave(function () {
-        $('#btnMultiplication').attr("style", "color:white");
-        $('#multiplyShortcut').hide();
-    });
-
-    $('#btnDivision').mouseenter(function () {
-        $('#btnDivision').attr("style", "color:yellow");
-        $('#divideShortcut').show();
-    }).mouseleave(function () {
-        $('#btnDivision').attr("style", "color:white");
-        $('#divideShortcut').hide();
-    });
-
     $('#btnResetGame').mouseenter(function () {
         $('#resetShortcut').show();
     }).mouseleave(function () {

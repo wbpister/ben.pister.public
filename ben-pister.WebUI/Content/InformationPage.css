@@ -38,6 +38,11 @@
     font-size:14pt;
 }
 
+.btn-operation:hover{
+    color:white;
+    background-color:slategrey !important;
+}
+
 #selectedModeFeedback{
     margin-left: 25px;
 }
