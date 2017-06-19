@@ -127,12 +127,12 @@
     var instructionVisible = false;
     $('#showLevelInstructions').click(function () {
         if (instructionVisible) {
-            document.getElementById('levelSelectionInstructions').style.display = "none";
+            $('#levelSelectionInstructions').hide(500);
             $('#showLevelInstructions').html("Show Level Selection Instructions");
             instructionVisible = false;
         }
         else {
-            document.getElementById('levelSelectionInstructions').style.display = "inline";
+            $('#levelSelectionInstructions').show(500);
             $('#showLevelInstructions').html("Hide Level Selection Instructions");
             document.getElementById('levelSelectionInstructions').style.margin = "0 auto !important";
             document.getElementById('levelSelectionInstructions').style.float = "none !important";
@@ -143,12 +143,12 @@
     var gamePlayInstructionVisible = false;
     $('#gameInstructions').click(function () {
         if (gamePlayInstructionVisible) {
-            document.getElementById('gamePlayInstructions').style.display = "none";
+            $('#gamePlayInstructions').hide(250);
             $('#gameInstructions').html("Show Game Play Instructions");
             gamePlayInstructionVisible = false;
         }
         else {
-            document.getElementById('gamePlayInstructions').style.display = "inline";
+            $('#gamePlayInstructions').show(500);
             $('#gameInstructions').html("Hide Game Play Instructions");
             document.getElementById('gamePlayInstructions').style.margin = "0 auto !important";
             document.getElementById('gamePlayInstructions').style.float = "none !important";
@@ -157,14 +157,23 @@
     });
 
     var keyBoardShortcutsVisible = false;
+    var keyBoardShortcutString = "KeyBoard Shortcuts";
     $('#btnKeyBoardShortcuts').click(function () {
+        //if (keyBoardShortcutsVisible) {
+        //    show_hideFormControls(keyBoardShortcutsVisible, keyBoardShortcutTable, keyBoardShortcutString);
+        //    keyBoardShortcutsVisible = false;
+        //}
+        //else {
+        //    show_hideFormControls(keyBoardShortcutsVisible, keyBoardShortcutString);
+        //    keyBoardShortcutsVisible = true;
+        //}
         if (keyBoardShortcutsVisible) {
-            document.getElementById('keyBoardShortcutTable').style.display = "none";
+            $('#keyBoardShortcutTable').hide(500);
             $('#btnKeyBoardShortcuts').html('Show KeyBoard Shortcuts');
             keyBoardShortcutsVisible = false;
         }
         else {
-            document.getElementById('keyBoardShortcutTable').style.display = "inline";
+            $('#keyBoardShortcutTable').show(500);
             $('#btnKeyBoardShortcuts').html('Hide KeyBoard Shortcuts');
             document.getElementById('keyBoardShortcutTable').style.margin = "0 auto !important";
             document.getElementById('keyBoardShortcutTable').style.float = "none !important";
@@ -189,3 +198,18 @@
         }
     });
 });
+
+function show_hideFormControls(boolValue, controlId, stringMessage) {
+    if (keyBoardShortcutsVisible) {
+        $('#' + controlId).hide(500);
+        $('#btnKeyBoardShortcuts').html('Show ' + stringMessage);
+        keyBoardShortcutsVisible = false;
+    }
+    else {
+        $('#keyBoardShortcutTable').show(500);
+        $('#btnKeyBoardShortcuts').html('Hide KeyBoard Shortcuts');
+        document.getElementById('keyBoardShortcutTable').style.margin = "0 auto !important";
+        document.getElementById('keyBoardShortcutTable').style.float = "none !important";
+        keyBoardShortcutsVisible = true;
+    }
+}

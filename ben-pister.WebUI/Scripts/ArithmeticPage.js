@@ -252,6 +252,7 @@ function gameCounter() {
     var count = 301;
     var minutes = Number(Math.floor(count / 60));
     var seconds = Number(Math.floor(count % 60));
+    var secondsText = "";
 
     var counter = setInterval(decrement, 1000);
 
@@ -262,10 +263,12 @@ function gameCounter() {
             seconds = 59;
         }
 
-        $('#txtCountdown').val(minutes + " m : " + seconds + " s");
+        secondsText = (seconds < 10) ? "0" + seconds : seconds;
+        $('#txtCountdown').val(minutes + ":" + secondsText);
+        $('#timeIsLow').html(minutes + ":" + secondsText);
 
-        if (minutes === 0 && seconds === 59) {
-            alert("59 seconds remaining");
+        if (minutes == 0) {
+            $('#timeIsLow').attr('style', 'color:red');
         }
 
         if (minutes <= 0 && seconds <= 0) {

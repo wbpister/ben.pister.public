@@ -99,3 +99,8 @@ fieldset{
 .message-pad-top{
     padding-top:5px;
 }
+
+#timeIsLow{
+    font:thin 10px arial;
+    margin-left:10px;
+}
