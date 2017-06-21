@@ -24,12 +24,12 @@
     });
 
     $('#btnSubmitAnswer').on("click", function () {
-        var submitStatus = $('#submitStatus').val();
+        var submitStatus = $('#txtSubmitStatus').val();
         
         //Eliminate duplicated code execution
         if (Number(submitStatus) == 0) {
             arithmetic_handle();
-            $('#numbersGenerated').val('0');
+            $('#txtNumbersGenerated').val('0');
         }
     });
 
@@ -46,7 +46,7 @@
     });
 
     $('#arithmeticGame').click(function () {
-        window.location.replace('/InformationEntry/HandleInformation');
+        window.location.replace('/MathChallenge/HandleInformation');
     });
 
     $('#startFishGame').click(function () {
@@ -159,14 +159,7 @@
     var keyBoardShortcutsVisible = false;
     var keyBoardShortcutString = "KeyBoard Shortcuts";
     $('#btnKeyBoardShortcuts').click(function () {
-        //if (keyBoardShortcutsVisible) {
-        //    show_hideFormControls(keyBoardShortcutsVisible, keyBoardShortcutTable, keyBoardShortcutString);
-        //    keyBoardShortcutsVisible = false;
-        //}
-        //else {
-        //    show_hideFormControls(keyBoardShortcutsVisible, keyBoardShortcutString);
-        //    keyBoardShortcutsVisible = true;
-        //}
+        
         if (keyBoardShortcutsVisible) {
             $('#keyBoardShortcutTable').hide(500);
             $('#btnKeyBoardShortcuts').html('Show KeyBoard Shortcuts');
@@ -182,23 +175,24 @@
     });
 
     $('#btnResetGame').click(function () {
-        window.location.replace('/InformationEntry/HandleInformation');
+        window.location.replace('/MathChallenge/HandleInformation');
         $('resetStatusMessage').innerHTML = 'Game successfully reset';
     });
 
     $('#answer').keydown(function (e) {
         if (e.keyCode === 13) {
-            var submitStatus = $('#submitStatus').val();
+            var submitStatus = $('#txtSubmitStatus').val();
 
             //Eliminate duplicated code execution
             if (Number(submitStatus) == 0) {
                 arithmetic_handle();
-                $('#numbersGenerated').val('0');
+                $('#txtNumbersGenerated').val('0');
             }
         }
     });
 });
 
+//***function in progress
 function show_hideFormControls(boolValue, controlId, stringMessage) {
     if (keyBoardShortcutsVisible) {
         $('#' + controlId).hide(500);

@@ -248,7 +248,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FileDownloadController.cs" />
-    <Compile Include="Controllers\InformationEntryController.cs" />
+    <Compile Include="Controllers\MathChallengeController.cs" />
     <Compile Include="Controllers\Interesting_InfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KentuckianaEatsController.cs" />
@@ -258,6 +258,7 @@
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\Eatery_Repository.cs" />
+    <Compile Include="Models\MathGameViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -283,10 +284,11 @@
     <Content Include="Views\FileDownload\PdfDownload.cshtml" />
     <Content Include="Views\Shared\_NavBarButton.cshtml" />
     <Content Include="Views\Shared\_FooterViewShared.cshtml" />
-    <Content Include="Views\InformationEntry\HandleInformation.cshtml" />
+    <Content Include="Views\MathChallenge\HandleInformation.cshtml" />
     <Content Include="Views\KentuckianaEats\KIEats.cshtml" />
     <Content Include="Views\Shared\_resume.cshtml" />
     <Content Include="Views\Resume\Index.cshtml" />
+    <Content Include="Views\Shared\_MathGameInstructions.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

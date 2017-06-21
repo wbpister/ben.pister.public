@@ -1,4 +1,5 @@
 ﻿
+@model ben_pister.WebUI.Models.MathGameViewModel
 @{
     ViewBag.Title = "HandleInformation";
 }
@@ -14,15 +15,13 @@
             I enjoy working math problems in my head for exercise, an idea inspired by two math instructors:<br />
             a junior high math instructor and my high school calculus instructor.
         </h4>
-
-        <span class="text-info">This will likely be a continually evolving work.<br /> I love math-based games of various kinds.</span>
     </div>
 </div>
 
 <body id="arithmeticBodyId" style="background-color:lightgrey">
-    <div class="row">
-        <div class="col-lg-5 col-md-6 col-xs-12 pad-top-10 text-center">
-            <button id="gameInstructions">Show Game Play Instructions</button><br />
+    <div class="row" style="border-top:1px solid black">
+        <div class="col-lg-4 col-md-6 col-sm-6 text-center pad-bottom-10">
+            <button id="gameInstructions" style="width:90%">Show Game Play Instructions</button>
             <table id="gamePlayInstructions" class="table-responsive table-bordered table-striped level-instruction-table" style="display:none">
                 <thead>
                     <tr>
@@ -41,7 +40,7 @@
                         <td>
                             Once a level is selected, this will be the level for the duration of the 5 minutes. <br />
                             If another level is desired, there is a "Reset Game" button at the bottom of the page.<br />
-                            I have attempted to adjust scoring to the difficulty level of both level selection and 
+                            I have attempted to adjust scoring to the difficulty level of both level selection and
                             mathematical operation selected.
                         </td>
                     </tr>
@@ -60,11 +59,9 @@
                     </tr>
                 </tfoot>
             </table>
-
         </div>
-
-        <div class="col-lg-7 col-md-6 col-xs-12 pad-top-10 text-center">
-            <button id="showLevelInstructions">Show Level Selection Instructions</button><br />
+        <div class="col-lg-4 col-md-6 col-sm-6 text-center pad-bottom-10">
+            <button id="showLevelInstructions" style="width:90%">Show Level Selection Instructions</button>
             <table id="levelSelectionInstructions" class="table-responsive table-bordered table-striped level-instruction-table" style="display:none">
                 <thead>
                     <tr>
@@ -105,31 +102,8 @@
                 </tfoot>
             </table>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-5 col-md-6 col-xs-12 pad-top-75">
-            <fieldset>
-                <legend>Difficulty Level</legend>
-                <div class="col-md-12">
-                    <div class="col-md-2 pad-top-25">
-                        <button id="btnL1" class="btn btn-default level-buttons">L1</button>
-                    </div>
-                    <div class="col-md-2 pad-top-25">
-                        <button id="btnL2" class="btn btn-success level-buttons">L2</button>
-                    </div>
-                    <div class="col-md-2 pad-top-25">
-                        <button id="btnL3" class="btn btn-danger level-buttons">L3</button>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        @Html.Label("Selected Level", "Selected Level")<div class="clearfix"></div>
-                        @Html.TextBox("levelSelected", "", new { @id = "levelSelected", @readonly="readonly", @class = "pad-bottom-10" })
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-        <div class="col-lg-7 col-md-6 col-xs-12 pad-top-75 hidden-xs">
-            <button id="btnKeyBoardShortcuts" class="pad-bottom-10">Show KeyBoard Shortcuts</button><br />
+        <div class="col-lg-4 col-md-4 col-sm-6 text-center pad-bottom-10 visible-lg hidden-md hidden-sm hidden-xs">
+            <button id="btnKeyBoardShortcuts" class="pad-bottom-10" style="width:90%">Show KeyBoard Shortcuts</button>
             <table id="keyBoardShortcutTable" class="table-responsive table-bordered table-striped col-xs-12" style="display:none">
                 <thead>
                     <tr>
@@ -157,16 +131,37 @@
                 </tbody>
             </table>
         </div>
-        
+    </div>
 
+    <div class="row">
+        <div class="col-lg-5 col-md-6 col-xs-12 pad-top-75">
+            <fieldset>
+                <legend>Difficulty Level</legend>
+                <div class="col-md-12">
+                    <div class="col-md-2 pad-top-25">
+                        <button id="btnL1" class="btn btn-default level-buttons">L 1</button>
+                    </div>
+                    <div class="col-md-2 pad-top-25">
+                        <button id="btnL2" class="btn btn-default level-buttons">L 2</button>
+                    </div>
+                    <div class="col-md-2 pad-top-25">
+                        <button id="btnL3" class="btn btn-default level-buttons">L 3</button>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        @Html.Label("Selected Level", "Selected Level")<div class="clearfix"></div>
+                        @Html.TextBox("levelSelected", "", new { @readonly="readonly", @class = "pad-bottom-10" })
+                    </div>
+                </div>
+            </fieldset>
+        </div>
     </div>
     <br /><br />
     <div class="row">
         <div class="col-lg-3 col-md-4 col-xs-12">
             <div class="row text-left">
                 <div class="col-md-8 col-xs-12">
-                    @Html.Label("timerRemaining", "timeRemaining", new { @class = "text-left" })
-                    @Html.TextBox("txtCountdown", "", new { @id = "txtCountdown", @readonly="readonly", @class="form-control pad-bottom-20" })
+                    @Html.Label("timerRemaining", "Time Remaining", new { @class = "text-left" })
+                    @Html.TextBox("txtCountdown", "", new { @readonly="readonly", @class="form-control pad-bottom-20" })
                 </div>
             </div>
         </div>
@@ -176,7 +171,7 @@
             <div class="row text-left">
                 <div class="col-md-8 col-xs-12">
                     @Html.Label("Score", "Score", new { @class = "text-left" })
-                    @Html.TextBox("txtScore", "0", new { @id = "txtScore", @readonly = "readonly", @class = "form-control pad-bottom-20" })
+                    @Html.TextBox("txtScore", "0", new { @readonly = "readonly", @class = "form-control pad-bottom-20" })
                 </div>
             </div>
         </div>
@@ -185,14 +180,14 @@
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-center">
             <div class="row">
                 <div class="col-md-4 col-xs-6 arithmetic_btn">
-                    <button id="btnAddition" class="btn btn-add btn-operation">
+                    <button id="btnAddition" class="btn btn-sm btn-add-sub btn-default btn-operation">
                         +<span id="addShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm hidden-xs shortcut-color" style="display:none">(ALT + =)</span>
                     </button>
                     <span id="mode_a"></span>
                 </div>
 
                 <div class="col-md-4 col-xs-6 arithmetic_btn">
-                    <button id="btnSubtraction" class="btn btn-sub btn-operation">
+                    <button id="btnSubtraction" class="btn btn-sm btn-add-sub btn-default btn-operation">
                         --<span id="subtractShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm hidden-xs shortcut-color" style="display:none">(ALT + -)</span>
                     </button>
                     <span id="mode_s"></span>
@@ -202,14 +197,14 @@
                 <div class="clearfix"></div>
 
                 <div class="col-md-4 col-xs-6 arithmetic_btn">
-                    <button id="btnMultiplication" class="btn btn-mul btn-operation">
+                    <button id="btnMultiplication" class="btn btn-sm btn-mul-div btn-operation">
                         x<span id="multiplyShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm hidden-xs shortcut-color" style="display:none">(ALT + x)</span>
                     </button>
                     <span id="mode_m"></span>
                 </div>
 
                 <div class="col-md-4 col-xs-6 arithmetic_btn">
-                    <button id="btnDivision" class="btn btn-div btn-operation">
+                    <button id="btnDivision" class="btn btn-sm btn-mul-div btn-operation">
                         /<span id="divideShortcut" class="pad-left-5 hidden-lg hidden-md hidden-sm  hidden-xs shortcut-color" style="display:none">(ALT + /)</span>
                     </button>
                     <span id="mode_d"></span>
@@ -260,41 +255,40 @@
             <div class="clearfix"></div>
             <br /><br /><br /><br /><br />
 
-            <div class="col-md-8" style="display:none">
-                <label class="label-space">Number 1</label>
+            <!--Hidden conrols-->
+            <div class="col-md-8">
                 @Html.TextBox("txtNum1", null, new { @class = "hidden-control", @readonly = "readonly" })
             </div>
 
-            <div class="col-md-8" style="display:none">
-                <label class="label-space">Number 2</label>
+            <div class="col-md-8">
                 @Html.TextBox("txtNum2", null, new { @class = "hidden-control", @readonly = "readonly" })
             </div>
 
-            <div style="display:none">
-                @Html.TextBox("txt-mode", null, new { @class = "hidden-control" })
+            <div>
+                @Html.TextBox("txtMode", null, new { @class = "hidden-control" })
             </div>
 
-            <div style="display:none">
-                @Html.TextBox("correct-answer", "", new { @class = "hidden-control" })
+            <div>
+                @Html.TextBox("txtCorrectAnswer", "", new { @class = "hidden-control" })
             </div>
 
-            <div style="display:none">
-                @Html.TextBox("submitStatus", "0", new { @id = "submitStatus", @class = "hidden-control" })
+            <div>
+                @Html.TextBox("txtSubmitStatus", "0", new { @class = "hidden-control" })
             </div>
 
-            <div style="display:none">
-                @Html.TextBox("numbersGenerated", "0", new { @id = "numbersGenerated", @class = "hidden-control" })
+            <div>
+                @Html.TextBox("txtNumbersGenerated", "0", new { @class = "hidden-control" })
             </div>
 
-            <div style="display:none">
-                @Html.TextBox("attempts", "0", new { @id = "attempts", @class = "hidden-control" })
+            <div>
+                @Html.TextBox("txtAttempts", "0", new { @class = "hidden-control" })
             </div>
 
-            <div style="display:none">
+            <div>
                 @Html.TextBox("txtBoundary", "", new { @class = "hidden-control" })
             </div>
 
-            <div style="display:none">
+            <div>
                 @Html.TextBox("txtMin", "", new { @class = "hidden-control" })
             </div>
         </div>

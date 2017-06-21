@@ -1,6 +1,7 @@
-﻿function setUpEquation(mode) {
-    $('#submitStatus').val('0');
-    $('#attempts').val('0');
+﻿//Arithmetic handling
+function setUpEquation(mode) {
+    $('#txtSubmitStatus').val('0');
+    $('#txtAttempts').val('0');
     document.getElementById('btnSubmitAnswer').disabled = false;
     document.getElementById('answer').focus();
 
@@ -8,7 +9,7 @@
     var number1 = 'num1';
     var number2 = 'num2';
     var levelDifficulty = getDifficultyLevel();
-    var numbersGenerated = $('#numbersGenerated').val();
+    var numbersGenerated = $('#txtNumbersGenerated').val();
 
     //Generate two numbers, calculate and store the outcome according to calculation mode selected
     if (levelDifficulty != 0) {
@@ -30,7 +31,7 @@ function generateTwoNums(mode, num1, num2) {
 
     var upperNumberBound = $('#txtBoundary').val();
     var lowerNumberBound = $('#txtMin').val();
-    $('#txt-mode').val(mode);
+    $('#txtMode').val(mode);
     $('#answer').val('');
     $('#result-message').html('');
 
@@ -63,7 +64,7 @@ function generateTwoNums(mode, num1, num2) {
 
     print(mode, number1, number2, num1, num2);
 
-    $('#numbersGenerated').val('1');
+    $('#txtNumbersGenerated').val('1');
 }
 
 var mode_feedback = {
@@ -140,7 +141,7 @@ var arithmetic_calc = {
 };
 
 function arithmetic_handle() {
-    var mode = $('#txt-mode').val();
+    var mode = $('#txtMode').val();
     var num1 = $('#txtNum1').val();
     var num2 = $('#txtNum2').val();
     var result = parseInt(0);
@@ -158,7 +159,7 @@ function arithmetic_handle() {
             break;
     }
 
-    $('#correct-answer').val(result);
+    $('#txtCorrectAnswer').val(result);
 
     check_answer();
 
@@ -166,39 +167,41 @@ function arithmetic_handle() {
 }
 
 function check_answer() {
-    var correct = $('#correct-answer').val();
+    var correctAnswer = $('#txtCorrectAnswer').val();
     var submitted = '';
 
-    if ($('#txt-mode').val() == 'd') {
+    if ($('#txtMode').val() == 'd') {
         submitted = parseFloat($('#answer').val());
     }
     else { submitted = $('#answer').val(); }
 
-    if (correct == '') {
+
+    if (correctAnswer == '') {
         $('#result-message').html('Please select a mode.');
         return;
     }
-
+    
+        //If operation has not been selected or answer has not been entered
     else if (submitted == '') {
         $('#result-message').html('Please select an operation <strong>AND</strong> enter an answer to be checked.');
     }
 
-    else if (correct == submitted) {
+    else if (correctAnswer == submitted) {
         performScoreIncrease();
-        $('#result-message').html('Congratulations, you are correct!  :)');
+        $('#result-message').html('Congratulations, you are correct!');
         document.getElementById('btnSubmitAnswer').focus();
         $('#mobileScoreUpdate').html('<strong>Current Score: ' + $('#txtScore').val() + '</strong>');
-        $('#submitStatus').val(1);
+        $('#txtSubmitStatus').val(1);
     }
 
     else {
-        $('#result-message').html('Sorry, that is incorrect.  :(');
+        $('#result-message').html('Sorry, that is incorrect.');
 
-        var attempts = $('#attempts').val();
+        var attempts = $('#txtAttempts').val();
         attempts = Number(attempts) + Number(1);
-        $('#attempts').val(attempts);
+        $('#txtAttempts').val(attempts);
         if (attempts >= 8) {  //for some reason this is hit twice. 8 is actually 4 here
-            alert('The correct answer is ' + $('#correct-answer').val());
+            alert('The correct answer is ' + $('#txtCorrectAnswer').val());
 
             $('#result-message').html("Please select an operation to continue");
 
@@ -220,7 +223,7 @@ function performScoreIncrease() {
 }
 
 function getModeCalculation() {
-    var mode = $('#txt-mode').val();
+    var mode = $('#txtMode').val();
 
     if (mode == 'a' || mode == 's') {  //Level 1: 10 pts, Level 2: 80 pts, Level 3: 120 pts
         return 10 * getLevelCoefficient();
@@ -267,8 +270,9 @@ function gameCounter() {
         $('#txtCountdown').val(minutes + ":" + secondsText);
         $('#timeIsLow').html(minutes + ":" + secondsText);
 
-        if (minutes == 0) {
-            $('#timeIsLow').attr('style', 'color:red');
+        if (minutes == 0 && seconds == 59) {
+            $('#timeIsLow').addClass('red-font');
+            $('#txtCountdown').addClass('low-time-remaining');
         }
 
         if (minutes <= 0 && seconds <= 0) {
@@ -279,29 +283,27 @@ function gameCounter() {
     }
 }
 
-function gameCounterStop() {
-    clearInterval(counter);
-    $('#txtCountdown').val('');
-    return;
-}
-
 function setLevelSelectionsStatus(assignBoolean) {
     document.getElementById('btnL1').disabled = assignBoolean;
     document.getElementById('btnL2').disabled = assignBoolean;
     document.getElementById('btnL3').disabled = assignBoolean;
 }
 
-function levelButtonActions() {
-    clearModeButtonErrors();
-    $('#numbersGenerated').val('0');
-    $('resetStatusMessage').innerHTML = '';
-    setLevelSelectionsStatus(true);
+
+
+function arithmeticButtonsStatus(arithButtonStatus) {
+    document.getElementById('btnAddition').disabled = arithButtonStatus;
+    document.getElementById('btnSubtraction').disabled = arithButtonStatus;
+    document.getElementById('btnMultiplication').disabled = arithButtonStatus;
+    document.getElementById('btnDivision').disabled = arithButtonStatus;
+    document.getElementById('btnSubmitAnswer').disabled = arithButtonStatus;
 }
 
+//Clear for new game
 function clearModeButtonErrors() {
     clearMessages();
     arithmeticButtonsStatus(false);
-    $('#attempts').val('0');
+    $('#txtAttempts').val('0');
     $('#txtScore').val('0');
     $('#txtCountdown').val('');
 }
@@ -321,10 +323,9 @@ function gameOver_DisableAll() {
     $('#result-message').html('Game Over!  Your score: ' + $('#txtScore').val());
 }
 
-function arithmeticButtonsStatus(arithButtonStatus) {
-    document.getElementById('btnAddition').disabled = arithButtonStatus;
-    document.getElementById('btnSubtraction').disabled = arithButtonStatus;
-    document.getElementById('btnMultiplication').disabled = arithButtonStatus;
-    document.getElementById('btnDivision').disabled = arithButtonStatus;
-    document.getElementById('btnSubmitAnswer').disabled = arithButtonStatus;
+function levelButtonActions() {
+    clearModeButtonErrors();
+    $('#txtNumbersGenerated').val('0');
+    $('resetStatusMessage').innerHTML = '';
+    setLevelSelectionsStatus(true);
 }

@@ -1,7 +1,5 @@
 ﻿html, body {
-    /*padding-top:25px;*/
     padding:30px 10px 20px 5px;
-    /*background-color:slategrey;*/
 }
 
 .bck_img{
@@ -55,7 +53,7 @@
 }
 
 .fish-game-background{
-    background-color:#4445ca;  /*Other possible values starting with closest: #4844ca#463dd6#463ed0#4037d7*/
+    background-color:#4445ca;
 }
 
 canvas{
@@ -76,7 +74,7 @@ canvas{
     text-align:center;
 }
 
-.blue_link{
+.blue-link{
     text-decoration:underline;
     color:aliceblue;
 }
@@ -91,7 +89,7 @@ canvas{
     color:white;
 }
 
-.download_link{
+.download-link{
     text-decoration:underline;
     color:#293038;
     width:100%;
@@ -121,7 +119,6 @@ canvas{
 .my_footer{
     height:80px;
     width:100%;
-    /*border-top:2px solid white;*/
     background-color:darkgray;
     text-align:center;
     opacity: 0.8;
@@ -228,7 +225,6 @@ canvas{
 }
 
 .pad-top-nav{
-    /*padding:0px 20px 0px 20px !important;*/
     margin:0px 0px 0px 0px;
 }
 
@@ -242,5 +238,9 @@ canvas{
 }
 
 .hide-element{
-    
+    display:none;
+}
+
+.hidden-control{
+    display:none;
 }

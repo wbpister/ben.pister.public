@@ -12,35 +12,34 @@
 }
 
 .level-buttons{
-    height:28px !important;
+    height:2em !important;
     padding: 0px 10px 0px 15px;
 }
 
-.btn-add{
-    background-color:green;
+.btn-add-sub{
+    color:green;
 }
 
-.btn-sub{
-    background-color:green;
+.btn-mul-div{
+    color:red;
 }
 
-.btn-mul{
-    background-color: darkred;
-}
-
-.btn-div{
-    background-color:darkred;
+.btn-color-white{
+    color:white;
 }
 
 .btn-operation{
-    color:white;
-    font-weight:700;
-    font-size:14pt;
+    font-weight:500;
+    font-size:1.3em;
+    border: 2px solid black;
 }
 
 .btn-operation:hover{
-    color:white;
-    background-color:slategrey !important;
+    border:2px solid grey;
+}
+
+.btn-default:hover{
+    color:black;
 }
 
 #selectedModeFeedback{
@@ -103,4 +102,22 @@ fieldset{
 #timeIsLow{
     font:thin 10px arial;
     margin-left:10px;
+}
+
+.red-font{
+    color:red;
+}
+
+.low-time-remaining{
+    border:1px solid red;
+}
+
+#btnL1{
+    color:black;
+}
+#btnL2{
+    color:orange;
+}
+#btnL3{
+    color:red;
 }
