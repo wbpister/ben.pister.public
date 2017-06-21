@@ -192,7 +192,7 @@
     });
 });
 
-//***function in progress
+//***function in progress to reduce duplicate code
 function show_hideFormControls(boolValue, controlId, stringMessage) {
     if (keyBoardShortcutsVisible) {
         $('#' + controlId).hide(500);
